@@ -29,12 +29,12 @@
 <meta name="twitter:description" content="直接用write，按顺序输出，不会把其它数据清除再输出。直接用document.body.innerHTML=’xx’，会把之前的数据清除。可用+=添加数据。
 页面加载完后，通过按钮再运行js，如果使用write，清除数据，但可后退，使用innerHTML，清除数据，可能不能后退。">
 
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
 
 
 
 
-    <link rel="shortcut icon" href="/img/favicon.jpg">
+    <link rel="shortcut icon" href="/blog//img/favicon.jpg">
 
 
 
@@ -82,7 +82,7 @@
 
 
 
-    <script> yiliaConfig.rootUrl = "\/";</script>
+    <script> yiliaConfig.rootUrl = /blog/; </script>
 
 
 
@@ -97,7 +97,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/blog/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+            <img src="/blog//img/avatar.png" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/blog/">kameii</a></h1>
@@ -163,13 +163,13 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/blog/">主页</a></li>
+                            <li><a href="/blog//blog/">主页</a></li>
                         
-                            <li><a href="/blog/archives/">所有文章</a></li>
+                            <li><a href="/blog//blog/archives/">所有文章</a></li>
                         
-                            <li><a href="/blog/tags/">标签云</a></li>
+                            <li><a href="/blog//blog/tags/">标签云</a></li>
                         
-                            <li><a href="/blog/about/">关于我</a></li>
+                            <li><a href="/blog//blog/about/">关于我</a></li>
                         
                         </ul>
                     </nav>
@@ -227,7 +227,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/blog/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
+                <img src="/blog//img/avatar.png" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/blog/" title="回到主页">kameii</a></h1>
@@ -497,7 +497,7 @@
             }
             else {
                 var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
         })

@@ -29,12 +29,12 @@
 <meta name="twitter:description" content="css3的属性选择器中，有[attribute$=value]选择器。对&amp;lt;div id=&amp;quot;subsection1-1&amp;quot;&amp;gt;这样以“-1”结尾的元素，要用”\”转义字符，[id$=\-1]，类似的还有+,\等。
 [attribute^=value]和[attribute|=value]区别在于，后者的字符要求是完整的，比如对&amp;lt;p lang=&amp;quot;en-us&amp;">
 
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
 
 
 
 
-    <link rel="shortcut icon" href="/img/favicon.jpg">
+    <link rel="shortcut icon" href="/blog//img/favicon.jpg">
 
 
 
@@ -82,7 +82,7 @@
 
 
 
-    <script> yiliaConfig.rootUrl = "\/";</script>
+    <script> yiliaConfig.rootUrl = /blog/; </script>
 
 
 
@@ -97,7 +97,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/blog/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+            <img src="/blog//img/avatar.png" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/blog/">kameii</a></h1>
@@ -163,13 +163,13 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/blog/">主页</a></li>
+                            <li><a href="/blog//blog/">主页</a></li>
                         
-                            <li><a href="/blog/archives/">所有文章</a></li>
+                            <li><a href="/blog//blog/archives/">所有文章</a></li>
                         
-                            <li><a href="/blog/tags/">标签云</a></li>
+                            <li><a href="/blog//blog/tags/">标签云</a></li>
                         
-                            <li><a href="/blog/about/">关于我</a></li>
+                            <li><a href="/blog//blog/about/">关于我</a></li>
                         
                         </ul>
                     </nav>
@@ -227,7 +227,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/blog/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
+                <img src="/blog//img/avatar.png" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/blog/" title="回到主页">kameii</a></h1>
@@ -498,7 +498,7 @@
             }
             else {
                 var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
         })

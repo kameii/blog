@@ -28,12 +28,12 @@
 <meta name="twitter:description" content="《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整">
 <meta name="twitter:image" content="https://kameii.tk/blog/img/2016819.png">
 
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
 
 
 
 
-    <link rel="shortcut icon" href="/img/favicon.jpg">
+    <link rel="shortcut icon" href="/blog//img/favicon.jpg">
 
 
 
@@ -81,7 +81,7 @@
 
 
 
-    <script> yiliaConfig.rootUrl = "\/";</script>
+    <script> yiliaConfig.rootUrl = /blog/; </script>
 
 
 
@@ -96,7 +96,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/blog/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+            <img src="/blog//img/avatar.png" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/blog/">kameii</a></h1>
@@ -162,13 +162,13 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/blog/">主页</a></li>
+                            <li><a href="/blog//blog/">主页</a></li>
                         
-                            <li><a href="/blog/archives/">所有文章</a></li>
+                            <li><a href="/blog//blog/archives/">所有文章</a></li>
                         
-                            <li><a href="/blog/tags/">标签云</a></li>
+                            <li><a href="/blog//blog/tags/">标签云</a></li>
                         
-                            <li><a href="/blog/about/">关于我</a></li>
+                            <li><a href="/blog//blog/about/">关于我</a></li>
                         
                         </ul>
                     </nav>
@@ -226,7 +226,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/blog/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
+                <img src="/blog//img/avatar.png" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/blog/" title="回到主页">kameii</a></h1>
@@ -496,7 +496,7 @@
             }
             else {
                 var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
         })
