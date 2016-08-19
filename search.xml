@@ -5,14 +5,14 @@
     
     <entry>
       <title><![CDATA[语音相关]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/19/%E4%BF%84%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BF%84%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/</url>
+      <url>https://kameii.tk/blog/2016/08/19/%E4%BF%84%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BF%84%E8%AF%AD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/</url>
       <content type="html"><![CDATA[<p>关于元音弱化。/o/和/a/非重读，硬辅音后，在词首或重读音节前一音节，一级弱化为[ɐ][或[ʌ]（前者是莫斯科音，后者是圣彼得堡音，大学俄语东方就是这个。）其它情况下发[ə]，比如词末，重读音节前第二音节以及之前，重读后。</p>
 ]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[js运算符相关]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/js%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9B%B8%E5%85%B3/</url>
+      <url>https://kameii.tk/blog/2016/08/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/js%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9B%B8%E5%85%B3/</url>
       <content type="html"><![CDATA[<pre><code>var a=5;
 var b=a++ * --a;
 </code></pre><p>结果是25。这里，从左到右，先算b，然后算–a，假设值为c，则c=4，然后前面的a变量表达式，a=4，</p>
@@ -33,7 +33,7 @@ var b=++a * a--;
     
     <entry>
       <title><![CDATA[javascript脚本载入执行顺序，以及onload问题]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/javascript%E8%84%9A%E6%9C%AC%E8%BD%BD%E5%85%A5%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/</url>
+      <url>https://kameii.tk/blog/2016/08/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/javascript%E8%84%9A%E6%9C%AC%E8%BD%BD%E5%85%A5%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/</url>
       <content type="html"><![CDATA[<p>大原则是从上到下按序执行，放在<code>&lt;!DOCTYPE html&gt;</code>前面&gt;<code>&lt;html&gt;</code>前&gt;<code>&lt;head&gt;</code>前&gt;<code>&lt;head&gt;</code>中&gt;<code>&lt;body&gt;</code>前&gt;<code>&lt;body&gt;</code>中&gt;<code>&lt;/html&gt;</code>前&gt;<code>&lt;/html&gt;</code>后。</p>
 <p>引入js文件也一样。</p>
 <p>在body元素中使用onload，以及使用window.onload，这两者的执行情况有点复杂。可以参考<a href="http://blog.csdn.net/doupei2006/article/details/7888312" target="_blank" rel="external">这个链接</a>。但里面的例子是有问题的，情况二和情况四里面的window.onload用了函数调用赋值，而不是函数名，这是不应该的。<br>改好后，情况二是acbd，情况四是bcd。另外，在我的老版本firefox和ie9中，情况一是acd，在我的新版本chrome和opera中，则是acbd。<br>总结下：</p>
@@ -48,7 +48,7 @@ var b=++a * a--;
     
     <entry>
       <title><![CDATA[document.write和document.body.innerHTML]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/document.write%E5%92%8Cdocument.body.innerHTML/</url>
+      <url>https://kameii.tk/blog/2016/08/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/document.write%E5%92%8Cdocument.body.innerHTML/</url>
       <content type="html"><![CDATA[<p>直接用write，按顺序输出，不会把其它数据清除再输出。<br>直接用document.body.innerHTML=’xx’，会把之前的数据清除。可用+=添加数据。</p>
 <p>页面加载完后，通过按钮再运行js，如果使用write，清除数据，但可后退，使用innerHTML，清除数据，可能不能后退。</p>
 ]]></content>
@@ -56,14 +56,14 @@ var b=++a * a--;
     
     <entry>
       <title><![CDATA[hexo文章标题不能有#]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/19/hexo%E7%9B%B8%E5%85%B3/hexo%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/</url>
+      <url>https://kameii.tk/blog/2016/08/19/hexo%E7%9B%B8%E5%85%B3/hexo%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/</url>
       <content type="html"><![CDATA[<p>想在文章标题里写c#，虽然在首页可以看到，但一点进去就发现只解析到#前。</p>
 ]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[css学习笔记（二）伪类选择器]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/19/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%BA%8C)%20/</url>
+      <url>https://kameii.tk/blog/2016/08/19/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%BA%8C)%20/</url>
       <content type="html"><![CDATA[<ul>
 <li>伪元素选择器<br>主要是四个，:first-line,:first-letter,:before,:after。</li>
 </ul>
@@ -81,14 +81,14 @@ body{background-color:blue;}
     
     <entry>
       <title><![CDATA[css学习笔记（三）其它选择器]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/19/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%89)/</url>
+      <url>https://kameii.tk/blog/2016/08/19/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%89)/</url>
       <content type="html"><![CDATA[<p>-相邻选择器：<code>h1+p{}</code>指的是与h1后面相邻的一个p。<br><em>element1</em>~<em>element2</em> 选择器，通用兄弟元素选择器：出现在element1后面全部的element2，两者都同一的父元素，可隔其它元素。</p>
 ]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[css学习笔记（一）：属性选择器]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/19/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20/</url>
+      <url>https://kameii.tk/blog/2016/08/19/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20/</url>
       <content type="html"><![CDATA[<p>css3的属性选择器中，有<code>[attribute$=value]</code>选择器。对<code>&lt;div id=&quot;subsection1-1&quot;&gt;</code>这样以“-1”结尾的元素，要用”\”转义字符，<code>[id$=\-1]</code>，类似的还有+,\等。</p>
 <p><code>[attribute^=value]</code>和<code>[attribute|=value]</code>区别在于，后者的字符要求是完整的，比如对<code>&lt;p lang=&quot;en-us&quot;&gt;Hi!&lt;/p&gt;</code>和<code>&lt;p lang=&quot;enus&quot;&gt;Hi!&lt;/p&gt;</code>，用^可以都选到，用|则只能选到第一个。这里的完整不包括连字符“-”，en和us是两部分。<br><code>[attribute*=value]</code>和<code>[attribute~=value]</code>类似。</p>
 <p>伪类选择器<code>:lang(*language*)</code>的值和”|”选择器一样，要用完整的词，可以有”-“分割。</p>
@@ -97,7 +97,7 @@ body{background-color:blue;}
     
     <entry>
       <title><![CDATA[c#学习笔记(二)：变量作用域]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/19/c'sharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c'sharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+      <url>https://kameii.tk/blog/2016/08/19/c'sharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c'sharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
       <content type="html"><![CDATA[<pre><code>int i;
 string text;
 for (i = 0; i &lt; 10; i++)
@@ -121,15 +121,15 @@ Console.WriteLine(&quot;Last text output in loop:{0}&quot;, text);
     
     <entry>
       <title><![CDATA[c#学习笔记(一)]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/19/c'sharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c'sharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/</url>
-      <content type="html"><![CDATA[<p>《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：<br><img src="/blog/img/2016819.png" alt="图"><br>另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整个页面了。</p>
+      <url>https://kameii.tk/blog/2016/08/19/c'sharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c'sharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/</url>
+      <content type="html"><![CDATA[<p>《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：<br><img src="/img/2016819.png" alt="图"><br>另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整个页面了。</p>
 <p>话说，这书之前的ASP.NET回送，按源代码来貌似也有点问题啊，不知道是不是版本的问题。</p>
 ]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[css居中定位的一些问题]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/18/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/css%E5%B1%85%E4%B8%AD%E5%AE%9A%E4%BD%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
+      <url>https://kameii.tk/blog/2016/08/18/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/css%E5%B1%85%E4%B8%AD%E5%AE%9A%E4%BD%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<p>1.</p>
 <pre><code>&lt;style&gt;
 .ww{    
@@ -179,7 +179,7 @@ dd{
     
     <entry>
       <title><![CDATA[建站小记]]></title>
-      <url>https://kameii.tk/blog/blog/2016/08/17/%E5%BB%BA%E7%AB%99%E5%B0%8F%E8%AE%B0/</url>
+      <url>https://kameii.tk/blog/2016/08/17/%E5%BB%BA%E7%AB%99%E5%B0%8F%E8%AE%B0/</url>
       <content type="html"><![CDATA[<p>　　第一篇在自己建的站上写的博客。有点感慨，但也不多。随便记点建站的东西吧。</p>
 <hr>
 <p>　　申请域名忘了从哪看到的，总之是在freenom申请了现在的tk域名。免费嘛，现在也就是建个站试试，以后还得换。不仅是域名，代码托管也得换地方。本来想放在sae什么的，但最后还是选在github。不过用github写博客，总感觉博客的内容应该和代码啊，编程啊之类的相关，虽然官方没这么要求。此外，因为是静态网页，还有其它的一些问题，所以以后应该还是会换的。<br>　　用hexo建博客，我也不记得是哪看到的了，貌似是看到别人的网站是这么建的，我也就学着用了，用的主题也一样。现在我的博客还没有自己修改，自己技术不到家是一方面，没有时间也是原因之一。不过说实话，现在的样子我已经很满意了。<br>　　话说，hexo是用markdown的。想当初，我在某地发表评论，因为没学过，甚至根本没听过markdown，评论的格式弄得很糟，被狠狠地吐槽了。很无奈，我是不知道别人是怎么知道这些东西的。<br>　　不说其他的了，具体建站的教程网上很多，也没有写的必要了。直接列点参考的链接吧。<br>　　1.<a href="http://www.isetsuna.com/categories/Hexo/" target="_blank" rel="external">Hexo博客系列</a>，主要是参考这个<br>　　2.<a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客</a>，这个没怎么看<br>其实网上一搜就可以搜到很多……</p>
