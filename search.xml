@@ -122,7 +122,7 @@ Console.WriteLine(&quot;Last text output in loop:{0}&quot;, text);
     <entry>
       <title><![CDATA[c#学习笔记(一)]]></title>
       <url>https://kameii.tk/blog/blog/2016/08/19/c'sharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c'sharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/</url>
-      <content type="html"><![CDATA[<p>《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：<br><img src="/img/2016819.png" alt="图"><br>另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整个页面了。</p>
+      <content type="html"><![CDATA[<p>《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：<br><img src="/blog/img/2016819.png" alt="图"><br>另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整个页面了。</p>
 <p>话说，这书之前的ASP.NET回送，按源代码来貌似也有点问题啊，不知道是不是版本的问题。</p>
 ]]></content>
     </entry>
