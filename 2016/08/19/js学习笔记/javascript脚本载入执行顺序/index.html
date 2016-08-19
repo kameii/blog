@@ -15,12 +15,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="kameii's Blog">
-<meta property="og:url" content="https://kameii.tk/blog/archives/2016/index.html">
+<meta name="description" content="大原则是从上到下按序执行，放在&amp;lt;!DOCTYPE html&amp;gt;前面&amp;gt;&amp;lt;html&amp;gt;前&amp;gt;&amp;lt;head&amp;gt;前&amp;gt;&amp;lt;head&amp;gt;中&amp;gt;&amp;lt;body&amp;gt;前&amp;gt;&amp;lt;body&amp;gt;中&amp;gt;&amp;lt;/html&amp;gt;前&amp;gt;&amp;lt;/html&amp;gt;后。
+引入js文件也一样。
+在body元素中使用onload，以及使用window.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript脚本载入执行顺序，以及onload问题">
+<meta property="og:url" content="https://kameii.tk/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/index.html">
 <meta property="og:site_name" content="kameii's Blog">
+<meta property="og:description" content="大原则是从上到下按序执行，放在&amp;lt;!DOCTYPE html&amp;gt;前面&amp;gt;&amp;lt;html&amp;gt;前&amp;gt;&amp;lt;head&amp;gt;前&amp;gt;&amp;lt;head&amp;gt;中&amp;gt;&amp;lt;body&amp;gt;前&amp;gt;&amp;lt;body&amp;gt;中&amp;gt;&amp;lt;/html&amp;gt;前&amp;gt;&amp;lt;/html&amp;gt;后。
+引入js文件也一样。
+在body元素中使用onload，以及使用window.">
+<meta property="og:updated_time" content="2016-08-19T13:40:18.193Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kameii's Blog">
+<meta name="twitter:title" content="javascript脚本载入执行顺序，以及onload问题">
+<meta name="twitter:description" content="大原则是从上到下按序执行，放在&amp;lt;!DOCTYPE html&amp;gt;前面&amp;gt;&amp;lt;html&amp;gt;前&amp;gt;&amp;lt;head&amp;gt;前&amp;gt;&amp;lt;head&amp;gt;中&amp;gt;&amp;lt;body&amp;gt;前&amp;gt;&amp;lt;body&amp;gt;中&amp;gt;&amp;lt;/html&amp;gt;前&amp;gt;&amp;lt;/html&amp;gt;后。
+引入js文件也一样。
+在body元素中使用onload，以及使用window.">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -50,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2016 | kameii&#39;s Blog</title>
+<title>javascript脚本载入执行顺序，以及onload问题 | kameii&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -60,8 +70,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -253,397 +263,203 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-js学习笔记/javascript脚本载入执行顺序" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/" class="article-date">
+      <time datetime="2016-08-19T14:15:32.102Z" itemprop="datePublished">2016-08-19</time>
+</a>
+
+
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript脚本载入执行顺序，以及onload问题
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2016/08/19/俄语学习笔记/俄语学习笔记(一)/" class="archive-article-date">
-      <time datetime="2016-08-19T14:15:32.224Z" itemprop="datePublished">08-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/08/19/俄语学习笔记/俄语学习笔记(一)/">语音相关</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/俄语学习笔记/">俄语学习笔记</a>
+        <p>大原则是从上到下按序执行，放在<code>&lt;!DOCTYPE html&gt;</code>前面&gt;<code>&lt;html&gt;</code>前&gt;<code>&lt;head&gt;</code>前&gt;<code>&lt;head&gt;</code>中&gt;<code>&lt;body&gt;</code>前&gt;<code>&lt;body&gt;</code>中&gt;<code>&lt;/html&gt;</code>前&gt;<code>&lt;/html&gt;</code>后。</p>
+<p>引入js文件也一样。</p>
+<p>在body元素中使用onload，以及使用window.onload，这两者的执行情况有点复杂。可以参考<a href="http://blog.csdn.net/doupei2006/article/details/7888312" target="_blank" rel="external">这个链接</a>。但里面的例子是有问题的，情况二和情况四里面的window.onload用了函数调用赋值，而不是函数名，这是不应该的。<br>改好后，情况二是acbd，情况四是bcd。另外，在我的老版本firefox和ie9中，情况一是acd，在我的新版本chrome和opera中，则是acbd。<br>总结下：</p>
+<ul>
+<li>onload都是页面加载好后最后执行</li>
+<li>window.onload出现在head中，使用匿名函数，老版本会被后面的body覆盖，新版本按顺序都执行。不适用匿名，按顺序都执行。</li>
+<li>window.onload在body里，覆盖body。</li>
+</ul>
+<p>顺便，如果按原来的函数调用赋值，情况二是abcd，情况四是bdc。这也是可以讲通的，调用函数后，给window.onload赋值的其实是undefined，放在head里，等于没赋值，放在body里，又覆盖了body定义的onload。</p>
+
+      
     </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/俄语/">俄语</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2016/08/19/js学习笔记/js运算符相关/" class="archive-article-date">
-      <time datetime="2016-08-19T14:15:32.105Z" itemprop="datePublished">08-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/08/19/js学习笔记/js运算符相关/">js运算符相关</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
+    <div class="copyright">
+        <p><span>Title:</span><a href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">kameii</a></p>
+        <p><span>Created:</span>2016-08-19, 22:15:32</p>
+        <p><span>Updated:</span>2016-08-19, 21:40:18</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/" title="javascript脚本载入执行顺序，以及onload问题">https://kameii.tk/blog/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/</a>
+            <span class="copy-path" data-clipboard-text="From https://kameii.tk/blog/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/　　By kameii" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
     </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-    </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/" class="archive-article-date">
-      <time datetime="2016-08-19T14:15:32.102Z" itemprop="datePublished">08-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2016/08/19/js学习笔记/document.write和document.body.innerHTML/" class="archive-article-date">
-      <time datetime="2016-08-19T14:15:32.100Z" itemprop="datePublished">08-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/08/19/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2016/08/19/hexo相关/hexo文章标题/" class="archive-article-date">
-      <time datetime="2016-08-19T14:15:32.094Z" itemprop="datePublished">08-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/08/19/hexo相关/hexo文章标题/">hexo文章标题不能有#</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/随笔/">随笔</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2016/08/19/css学习笔记/css学习笔记(二) /" class="archive-article-date">
-      <time datetime="2016-08-19T14:15:31.828Z" itemprop="datePublished">08-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/08/19/css学习笔记/css学习笔记(二) /">css学习笔记（二）伪类选择器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/css学习笔记/">css学习笔记</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/" class="archive-article-date">
-      <time datetime="2016-08-19T14:15:31.826Z" itemprop="datePublished">08-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/">css学习笔记（三）其它选择器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/css学习笔记/">css学习笔记</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2016/08/19/css学习笔记/css学习笔记(一) /" class="archive-article-date">
-      <time datetime="2016-08-19T14:15:31.824Z" itemprop="datePublished">08-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/08/19/css学习笔记/css学习笔记(一) /">css学习笔记（一）：属性选择器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/css学习笔记/">css学习笔记</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记（二）/" class="archive-article-date">
-      <time datetime="2016-08-19T14:15:31.821Z" itemprop="datePublished">08-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记（二）/">c#学习笔记(二)：变量作用域</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/c-学习笔记/">c#学习笔记</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/c/">c#</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/" class="archive-article-date">
-      <time datetime="2016-08-19T14:15:31.819Z" itemprop="datePublished">08-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/">c#学习笔记(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/c-学习笔记/">c#学习笔记</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/c/">c#</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/blog/archives/2016/page/2/">2</a><a class="extend next" rel="next" href="/blog/archives/2016/page/2/">Next &raquo;</a>
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/blog/2016/08/19/js学习笔记/js运算符相关/">
+                    js运算符相关
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/blog/2016/08/19/js学习笔记/document.write和document.body.innerHTML/">
+                    document.write和document.body.innerHTML
+                </a>
+            </div>
+        
     </nav>
-  
 
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"javascript脚本载入执行顺序，以及onload问题　| kameii's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/08/19/js学习笔记/javascript脚本载入执行顺序/" data-title="javascript脚本载入执行顺序，以及onload问题" data-url="https://kameii.tk/blog/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"null"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/blog/2016/08/19/js学习笔记/js运算符相关/" title="Pre: js运算符相关">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/blog/2016/08/19/js学习笔记/document.write和document.body.innerHTML/" title="Next: document.write和document.body.innerHTML">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/俄语学习笔记/俄语学习笔记(一)/">语音相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/js运算符相关/">js运算符相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/hexo相关/hexo文章标题/">hexo文章标题不能有#</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(二) /">css学习笔记（二）伪类选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/">css学习笔记（三）其它选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(一) /">css学习笔记（一）：属性选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记（二）/">c#学习笔记(二)：变量作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/">c#学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/18/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/17/建站小记/">建站小记</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
