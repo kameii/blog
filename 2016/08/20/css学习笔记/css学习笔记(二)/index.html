@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 <head>
 
     <!--[if lt IE 9]>
@@ -15,26 +15,50 @@
 
 
 
-<meta name="description" content="css3的属性选择器中，有[attribute$=value]选择器。对&amp;lt;div id=&amp;quot;subsection1-1&amp;quot;&amp;gt;这样以“-1”结尾的元素，要用”\”转义字符，[id$=\-1]，类似的还有+,\等。
-[attribute^=value]和[attribute|=value]区别在于，后者的字符要求是完整的，比如对&amp;lt;p lang=&amp;quot;en-us&amp;">
+<meta name="description" content="伪元素选择器主要是四个，:first-line,:first-letter,:before,:after。
+
+结构伪类选择器
+
+根选择器root和html标签选择器一样。：root{background-color:yellow;}
+body{background-color:blue;}
+与只用body{background-color:blue;}
+效果不一样。
+empty选择器
+targe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css学习笔记（一）：属性选择器">
-<meta property="og:url" content="https://kameii.tk/blog/2016/08/19/css学习笔记/css学习笔记(一) /index.html">
-<meta property="og:site_name" content="kameii's Blog">
-<meta property="og:description" content="css3的属性选择器中，有[attribute$=value]选择器。对&amp;lt;div id=&amp;quot;subsection1-1&amp;quot;&amp;gt;这样以“-1”结尾的元素，要用”\”转义字符，[id$=\-1]，类似的还有+,\等。
-[attribute^=value]和[attribute|=value]区别在于，后者的字符要求是完整的，比如对&amp;lt;p lang=&amp;quot;en-us&amp;">
-<meta property="og:updated_time" content="2016-08-19T14:02:15.954Z">
+<meta property="og:title" content="css学习笔记（二）：伪类选择器">
+<meta property="og:url" content="http://kameii.tk/blog/2016/08/20/css学习笔记/css学习笔记(二)/index.html">
+<meta property="og:site_name" content="kameii'site">
+<meta property="og:description" content="伪元素选择器主要是四个，:first-line,:first-letter,:before,:after。
+
+结构伪类选择器
+
+根选择器root和html标签选择器一样。：root{background-color:yellow;}
+body{background-color:blue;}
+与只用body{background-color:blue;}
+效果不一样。
+empty选择器
+targe">
+<meta property="og:updated_time" content="2016-08-20T04:07:01.565Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css学习笔记（一）：属性选择器">
-<meta name="twitter:description" content="css3的属性选择器中，有[attribute$=value]选择器。对&amp;lt;div id=&amp;quot;subsection1-1&amp;quot;&amp;gt;这样以“-1”结尾的元素，要用”\”转义字符，[id$=\-1]，类似的还有+,\等。
-[attribute^=value]和[attribute|=value]区别在于，后者的字符要求是完整的，比如对&amp;lt;p lang=&amp;quot;en-us&amp;">
+<meta name="twitter:title" content="css学习笔记（二）：伪类选择器">
+<meta name="twitter:description" content="伪元素选择器主要是四个，:first-line,:first-letter,:before,:after。
 
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+结构伪类选择器
+
+根选择器root和html标签选择器一样。：root{background-color:yellow;}
+body{background-color:blue;}
+与只用body{background-color:blue;}
+效果不一样。
+empty选择器
+targe">
+
+<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
 
 
 
 
-    <link rel="shortcut icon" href="/img/favicon.jpg">
+    <link rel="shortcut icon" href="/blog//img/favicon.jpg">
 
 
 
@@ -57,7 +81,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>css学习笔记（一）：属性选择器 | kameii&#39;s Blog</title>
+<title>css学习笔记（二）：伪类选择器 | kameii&#39;site</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -82,7 +106,7 @@
 
 
 
-    <script> yiliaConfig.rootUrl = "\/";</script>
+    <script> yiliaConfig.rootUrl = /blog/; </script>
 
 
 
@@ -97,7 +121,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/blog/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+            <img src="/blog//img/avatar.png" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/blog/">kameii</a></h1>
@@ -229,7 +253,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/blog/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
+                <img src="/blog//img/avatar.png" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/blog/" title="回到主页">kameii</a></h1>
@@ -264,11 +288,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-css学习笔记/css学习笔记(一) " class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-css学习笔记/css学习笔记(二)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/08/19/css学习笔记/css学习笔记(一) /" class="article-date">
-      <time datetime="2016-08-19T14:15:31.824Z" itemprop="datePublished">2016-08-19</time>
+      <a href="/blog/2016/08/20/css学习笔记/css学习笔记(二)/" class="article-date">
+      <time datetime="2016-08-20T04:06:01.912Z" itemprop="datePublished">2016-08-20</time>
 </a>
 
 
@@ -283,7 +307,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css学习笔记（一）：属性选择器
+      css学习笔记（二）：伪类选择器
     </h1>
   
 
@@ -308,9 +332,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>css3的属性选择器中，有<code>[attribute$=value]</code>选择器。对<code>&lt;div id=&quot;subsection1-1&quot;&gt;</code>这样以“-1”结尾的元素，要用”\”转义字符，<code>[id$=\-1]</code>，类似的还有+,\等。</p>
-<p><code>[attribute^=value]</code>和<code>[attribute|=value]</code>区别在于，后者的字符要求是完整的，比如对<code>&lt;p lang=&quot;en-us&quot;&gt;Hi!&lt;/p&gt;</code>和<code>&lt;p lang=&quot;enus&quot;&gt;Hi!&lt;/p&gt;</code>，用^可以都选到，用|则只能选到第一个。这里的完整不包括连字符“-”，en和us是两部分。<br><code>[attribute*=value]</code>和<code>[attribute~=value]</code>类似。</p>
-<p>伪类选择器<code>:lang(*language*)</code>的值和”|”选择器一样，要用完整的词，可以有”-“分割。</p>
+        <ul>
+<li>伪元素选择器<br>主要是四个，:first-line,:first-letter,:before,:after。</li>
+</ul>
+<p>结构伪类选择器</p>
+<ul>
+<li>根选择器root<br>和html标签选择器一样。<pre><code>：root{background-color:yellow;}
+body{background-color:blue;}
+</code></pre>与只用<pre><code>body{background-color:blue;}
+</code></pre>效果不一样。</li>
+<li>empty选择器</li>
+<li>target目标伪类选择器和not否定伪类选择器，有些书不归入结构伪类</li>
+</ul>
 
       
     </div>
@@ -319,13 +352,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/2016/08/19/css学习笔记/css学习笔记(一) /">css学习笔记（一）：属性选择器</a></p>
+        <p><span>本文标题:</span><a href="/blog/2016/08/20/css学习笔记/css学习笔记(二)/">css学习笔记（二）：伪类选择器</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">kameii</a></p>
-        <p><span>发布时间:</span>2016-08-19, 22:15:31</p>
-        <p><span>最后更新:</span>2016-08-19, 22:02:15</p>
+        <p><span>发布时间:</span>2016-08-20, 12:06:01</p>
+        <p><span>最后更新:</span>2016-08-20, 12:07:01</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2016/08/19/css学习笔记/css学习笔记(一) /" title="css学习笔记（一）：属性选择器">https://kameii.tk/blog/blog/2016/08/19/css学习笔记/css学习笔记(一) /</a>
-            <span class="copy-path" data-clipboard-text="原文: https://kameii.tk/blog/blog/2016/08/19/css学习笔记/css学习笔记(一) /　　作者: kameii" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/blog/2016/08/20/css学习笔记/css学习笔记(二)/" title="css学习笔记（二）：伪类选择器">http://kameii.tk/blog/blog/2016/08/20/css学习笔记/css学习笔记(二)/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://kameii.tk/blog/blog/2016/08/20/css学习笔记/css学习笔记(二)/　　作者: kameii" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -337,16 +370,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/">
-                    css学习笔记（三）其它选择器
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记（二）/">
-                    c#学习笔记(二)：变量作用域
+                <a href="/blog/2016/08/20/css学习笔记/css学习笔记(一)/">
+                    css学习笔记（一）：属性选择器
                 </a>
             </div>
         
@@ -394,7 +421,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"css学习笔记（一）：属性选择器　| kameii's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"css学习笔记（二）：伪类选择器　| kameii'site　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -414,21 +441,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/" title="上一篇: css学习笔记（三）其它选择器">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记（二）/" title="下一篇: c#学习笔记(二)：变量作用域">
+            <a href="/blog/2016/08/20/css学习笔记/css学习笔记(一)/" title="下一篇: css学习笔记（一）：属性选择器">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/俄语学习笔记/俄语学习笔记(一)/">语音相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/js运算符相关/">js运算符相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/hexo相关/hexo文章标题/">hexo文章标题不能有#</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(二) /">css学习笔记（二）伪类选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/">css学习笔记（三）其它选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(一) /">css学习笔记（一）：属性选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记（二）/">c#学习笔记(二)：变量作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/">c#学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/18/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/17/建站小记/">建站小记</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/css学习笔记/css学习笔记(二)/">css学习笔记（二）：伪类选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/css学习笔记/css学习笔记(一)/">css学习笔记（一）：属性选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/俄语学习笔记/俄语学习笔记(一)/">语音相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/js运算符相关/">js运算符相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/hexo相关/hexo文章标题/">hexo文章标题不能有#</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/">css学习笔记（三）其它选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记（二）/">c#学习笔记(二)：变量作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/">c#学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/18/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/17/建站小记/">建站小记</a></li></ul>
 
 
 
@@ -483,7 +508,7 @@
             }
             else {
                 var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
         })

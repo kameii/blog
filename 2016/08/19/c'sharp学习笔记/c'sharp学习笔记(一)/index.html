@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 <head>
 
     <!--[if lt IE 9]>
@@ -18,22 +18,22 @@
 <meta name="description" content="《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c#学习笔记(一)">
-<meta property="og:url" content="https://kameii.tk/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/index.html">
-<meta property="og:site_name" content="kameii's Blog">
+<meta property="og:url" content="http://kameii.tk/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/index.html">
+<meta property="og:site_name" content="kameii'site">
 <meta property="og:description" content="《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整">
-<meta property="og:image" content="https://kameii.tk/blog/img/2016819.png">
-<meta property="og:updated_time" content="2016-08-19T16:37:43.635Z">
+<meta property="og:image" content="http://kameii.tk/blog/blog/img/2016819.png">
+<meta property="og:updated_time" content="2016-08-20T03:03:06.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c#学习笔记(一)">
 <meta name="twitter:description" content="《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整">
-<meta name="twitter:image" content="https://kameii.tk/blog/img/2016819.png">
+<meta name="twitter:image" content="http://kameii.tk/blog/blog/img/2016819.png">
 
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
-
-
+<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
 
 
-    <link rel="shortcut icon" href="/img/favicon.jpg">
+
+
+    <link rel="shortcut icon" href="/blog//img/favicon.jpg">
 
 
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>c#学习笔记(一) | kameii&#39;s Blog</title>
+<title>c#学习笔记(一) | kameii&#39;site</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -81,7 +81,7 @@
 
 
 
-    <script> yiliaConfig.rootUrl = "\/";</script>
+    <script> yiliaConfig.rootUrl = /blog/; </script>
 
 
 
@@ -96,7 +96,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/blog/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+            <img src="/blog//img/avatar.png" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/blog/">kameii</a></h1>
@@ -228,7 +228,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/blog/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
+                <img src="/blog//img/avatar.png" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/blog/" title="回到主页">kameii</a></h1>
@@ -307,7 +307,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：<br><img src="/img/2016819.png" alt="图"><br>另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整个页面了。</p>
+        <p>《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：<br><img src="/blog/img/2016819.png" alt="图"><br>另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整个页面了。</p>
 <p>话说，这书之前的ASP.NET回送，按源代码来貌似也有点问题啊，不知道是不是版本的问题。</p>
 
       
@@ -320,10 +320,10 @@
         <p><span>本文标题:</span><a href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/">c#学习笔记(一)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">kameii</a></p>
         <p><span>发布时间:</span>2016-08-19, 22:15:31</p>
-        <p><span>最后更新:</span>2016-08-20, 00:37:43</p>
+        <p><span>最后更新:</span>2016-08-20, 11:03:06</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/" title="c#学习笔记(一)">https://kameii.tk/blog/blog/2016/08/19/c&#39;sharp学习笔记/c&#39;sharp学习笔记(一)/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://kameii.tk/blog/blog/2016/08/19/c&#39;sharp学习笔记/c&#39;sharp学习笔记(一)/　　作者: kameii" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/" title="c#学习笔记(一)">http://kameii.tk/blog/blog/2016/08/19/c&#39;sharp学习笔记/c&#39;sharp学习笔记(一)/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://kameii.tk/blog/blog/2016/08/19/c&#39;sharp学习笔记/c&#39;sharp学习笔记(一)/　　作者: kameii" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -392,7 +392,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"c#学习笔记(一)　| kameii's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"c#学习笔记(一)　| kameii'site　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -426,7 +426,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/俄语学习笔记/俄语学习笔记(一)/">语音相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/js运算符相关/">js运算符相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/hexo相关/hexo文章标题/">hexo文章标题不能有#</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(二) /">css学习笔记（二）伪类选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/">css学习笔记（三）其它选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(一) /">css学习笔记（一）：属性选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记（二）/">c#学习笔记(二)：变量作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/">c#学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/18/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/17/建站小记/">建站小记</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/css学习笔记/css学习笔记(二)/">css学习笔记（二）：伪类选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/css学习笔记/css学习笔记(一)/">css学习笔记（一）：属性选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/俄语学习笔记/俄语学习笔记(一)/">语音相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/js运算符相关/">js运算符相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/hexo相关/hexo文章标题/">hexo文章标题不能有#</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/">css学习笔记（三）其它选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记（二）/">c#学习笔记(二)：变量作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/">c#学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/18/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/17/建站小记/">建站小记</a></li></ul>
 
 
 
@@ -481,7 +481,7 @@
             }
             else {
                 var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
         })

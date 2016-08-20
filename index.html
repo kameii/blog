@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 <head>
 
     <!--[if lt IE 9]>
@@ -19,18 +19,18 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="kameii's Blog">
-<meta property="og:url" content="https://kameii.tk/blog/index.html">
-<meta property="og:site_name" content="kameii's Blog">
+<meta property="og:title" content="kameii'site">
+<meta property="og:url" content="http://kameii.tk/blog/index.html">
+<meta property="og:site_name" content="kameii'site">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kameii's Blog">
+<meta name="twitter:title" content="kameii'site">
 
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
-
-
+<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
 
 
-    <link rel="shortcut icon" href="/img/favicon.jpg">
+
+
+    <link rel="shortcut icon" href="/blog//img/favicon.jpg">
 
 
 
@@ -55,7 +55,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>kameii&#39;s Blog</title>
+<title>kameii&#39;site</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -80,7 +80,7 @@
 
 
 
-    <script> yiliaConfig.rootUrl = "\/";</script>
+    <script> yiliaConfig.rootUrl = /blog/; </script>
 
 
 
@@ -95,7 +95,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/blog/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+            <img src="/blog//img/avatar.png" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/blog/">kameii</a></h1>
@@ -227,7 +227,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/blog/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
+                <img src="/blog//img/avatar.png" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/blog/" title="回到主页">kameii</a></h1>
@@ -263,6 +263,147 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-css学习笔记/css学习笔记(二)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/08/20/css学习笔记/css学习笔记(二)/" class="article-date">
+      <time datetime="2016-08-20T04:06:01.912Z" itemprop="datePublished">2016-08-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/08/20/css学习笔记/css学习笔记(二)/">css学习笔记（二）：伪类选择器</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ul>
+<li>伪元素选择器<br>主要是四个，:first-line,:first-letter,:before,:after。</li>
+</ul>
+<p>结构伪类选择器</p>
+<ul>
+<li>根选择器root<br>和html标签选择器一样。<pre><code>：root{background-color:yellow;}
+body{background-color:blue;}
+</code></pre>与只用<pre><code>body{background-color:blue;}
+</code></pre>效果不一样。</li>
+<li>empty选择器</li>
+<li>target目标伪类选择器和not否定伪类选择器，有些书不归入结构伪类</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/css学习笔记/">css学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-css学习笔记/css学习笔记(一)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/08/20/css学习笔记/css学习笔记(一)/" class="article-date">
+      <time datetime="2016-08-20T04:04:56.052Z" itemprop="datePublished">2016-08-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/08/20/css学习笔记/css学习笔记(一)/">css学习笔记（一）：属性选择器</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>css3的属性选择器中，有<code>[attribute$=value]</code>选择器。对<code>&lt;div id=&quot;subsection1-1&quot;&gt;</code>这样以“-1”结尾的元素，要用”\”转义字符，<code>[id$=\-1]</code>，类似的还有+,\等。</p>
+<p><code>[attribute^=value]</code>和<code>[attribute|=value]</code>区别在于，后者的字符要求是完整的，比如对<code>&lt;p lang=&quot;en-us&quot;&gt;Hi!&lt;/p&gt;</code>和<code>&lt;p lang=&quot;enus&quot;&gt;Hi!&lt;/p&gt;</code>，用^可以都选到，用|则只能选到第一个。这里的完整不包括连字符“-”，en和us是两部分。<br><code>[attribute*=value]</code>和<code>[attribute~=value]</code>类似。</p>
+<p>伪类选择器<code>:lang(*language*)</code>的值和”|”选择器一样，要用完整的词，可以有”-“分割。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/css学习笔记/">css学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-俄语学习笔记/俄语学习笔记(一)" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -607,81 +748,6 @@ var b=++a * a--;
 
 
   
-    <article id="post-css学习笔记/css学习笔记(二) " class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/08/19/css学习笔记/css学习笔记(二) /" class="article-date">
-      <time datetime="2016-08-19T14:15:31.828Z" itemprop="datePublished">2016-08-19</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/08/19/css学习笔记/css学习笔记(二) /">css学习笔记（二）伪类选择器</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <ul>
-<li>伪元素选择器<br>主要是四个，:first-line,:first-letter,:before,:after。</li>
-</ul>
-<p>结构伪类选择器</p>
-<ul>
-<li>根选择器root<br>和html标签选择器一样。<pre><code>：root{background-color:yellow;}
-body{background-color:blue;}
-</code></pre>与只用<pre><code>body{background-color:blue;}
-</code></pre>效果不一样。</li>
-<li>empty选择器</li>
-<li>target目标伪类选择器和not否定伪类选择器，有些书不归入结构伪类</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/css学习笔记/">css学习笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-css学习笔记/css学习笔记(三)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -712,72 +778,6 @@ body{background-color:blue;}
       
           
         <p>-相邻选择器：<code>h1+p{}</code>指的是与h1后面相邻的一个p。<br><em>element1</em>~<em>element2</em> 选择器，通用兄弟元素选择器：出现在element1后面全部的element2，两者都同一的父元素，可隔其它元素。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/css学习笔记/">css学习笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css学习笔记/css学习笔记(一) " class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/08/19/css学习笔记/css学习笔记(一) /" class="article-date">
-      <time datetime="2016-08-19T14:15:31.824Z" itemprop="datePublished">2016-08-19</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/08/19/css学习笔记/css学习笔记(一) /">css学习笔记（一）：属性选择器</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>css3的属性选择器中，有<code>[attribute$=value]</code>选择器。对<code>&lt;div id=&quot;subsection1-1&quot;&gt;</code>这样以“-1”结尾的元素，要用”\”转义字符，<code>[id$=\-1]</code>，类似的还有+,\等。</p>
-<p><code>[attribute^=value]</code>和<code>[attribute|=value]</code>区别在于，后者的字符要求是完整的，比如对<code>&lt;p lang=&quot;en-us&quot;&gt;Hi!&lt;/p&gt;</code>和<code>&lt;p lang=&quot;enus&quot;&gt;Hi!&lt;/p&gt;</code>，用^可以都选到，用|则只能选到第一个。这里的完整不包括连字符“-”，en和us是两部分。<br><code>[attribute*=value]</code>和<code>[attribute~=value]</code>类似。</p>
-<p>伪类选择器<code>:lang(*language*)</code>的值和”|”选择器一样，要用完整的词，可以有”-“分割。</p>
 
       
     </div>
@@ -922,7 +922,7 @@ Console.WriteLine(&quot;Last text output in loop:{0}&quot;, text);
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：<br><img src="/img/2016819.png" alt="图"><br>另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整个页面了。</p>
+        <p>《c#入门经典（第5版）》第18章的ASP.NET AJAX回送一节中，用visual studio 2010的话，不会自行创建ScriptManager对象，因此在创建UpdatePanel 控件后，运行时还会报错。没看示例说明，查了网，然后看到源代码才发现这东西，无语了。下载的一个高清文字版本倒是注释了一下：<br><img src="/blog/img/2016819.png" alt="图"><br>另外，UpdatePanel外部的控件没有添加Click 事件啊，不加的话就不能刷新整个页面了。</p>
 <p>话说，这书之前的ASP.NET回送，按源代码来貌似也有点问题啊，不知道是不是版本的问题。</p>
 
       
@@ -1010,7 +1010,7 @@ Console.WriteLine(&quot;Last text output in loop:{0}&quot;, text);
             }
             else {
                 var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
         })
