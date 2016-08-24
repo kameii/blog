@@ -4,6 +4,20 @@
   
     
     <entry>
+      <title><![CDATA[position的absolute定位]]></title>
+      <url>http://kameii.tk/blog/blog/2016/08/24/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/position%E7%9A%84absolute%E5%AE%9A%E4%BD%8D/</url>
+      <content type="html"><![CDATA[<p>在给body设置样式<code>text-align: center;</code>后，直接给一个没父元素的span元素设置<code>position:absolute</code>，元素相对中线对齐。<br>应该说是对内联元素来说，是相对中线对齐。<br>对块元素，加<code>position:absolute</code>变成内联元素，左对齐。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[before和after伪类的一些问题]]></title>
+      <url>http://kameii.tk/blog/blog/2016/08/24/css%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/after%E5%92%8Cbefore%E4%BC%AA%E7%B1%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<p>这两者说是在元素之前和之后插入内容，但貌似应该说是在元素之中插入内容。以jquery的方法来说，<br>这两者更类似prepend和append，而不是before和after。<br>firefox和opera不能选择插入的内容，ie8可以。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[hexo文章标题不能有#]]></title>
       <url>http://kameii.tk/blog/blog/2016/08/20/hexo%E7%9B%B8%E5%85%B3/hexo%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/</url>
       <content type="html"><![CDATA[<p>想在文章标题里写c#，虽然在首页可以看到，但一点进去就发现只解析到#前。</p>
@@ -165,39 +179,12 @@ width: 1000px;
 &lt;/style&gt;
 &lt;div class=&apos;ww&apos;&gt;test&lt;/div&gt;
 </code></pre><p>不定义margin，且元素宽度不是100%，只有left和right，偏左，定义margin，居中。</p>
-<p>2.居中dl项目</p>
-<pre><code>&lt;style&gt;
-.test{
-    display:-webkit-box;
-    display:-moz-box;
-    -webkit-box-pack:center;
-    -webkit-box-align:center;
-    -moz-box-pack:center;
-    -moz-box-align:center;
-    display:box;
-    box-pack:center;
-    box-align:center;
-}
-dl{
-    margin-right:30px;
-}
-dd{
-    margin:0;
-}
-&lt;/style&gt;
-&lt;div class=&quot;test&quot;&gt;
-    &lt;dl&gt;
-        &lt;dt&gt;链接组1&lt;/dt&gt;
-        &lt;dd&gt;&lt;a href=&quot;/superwebview&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;
-        &lt;dd&gt;&lt;a href=&quot;/deepengine&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;
-    &lt;/dl&gt;
-    &lt;dl&gt;
-        &lt;dt&gt;链接组2&lt;/dt&gt;
-        &lt;dd&gt;&lt;a href=&quot;/vipservice/plan&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;
-        &lt;dd&gt;&lt;a href=&quot;/vipservice/channel&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;
-    &lt;/dl&gt;
-&lt;/div&gt;
-</code></pre>]]></content>
+<p>2.居中dl项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;test&quot;&gt;</div><div class="line">    &lt;dl&gt;</div><div class="line">        &lt;dt&gt;链接组1&lt;/dt&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/superwebview&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/deepengine&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;</div><div class="line">    &lt;/dl&gt;</div><div class="line">    &lt;dl&gt;</div><div class="line">        &lt;dt&gt;链接组2&lt;/dt&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/vipservice/plan&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/vipservice/channel&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;</div><div class="line">    &lt;/dl&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>    </p>
+<p>css样式：<br>1.<strong>推荐</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:flex;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        margin:auto;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>2.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:flex;</div><div class="line">        justify-content:center;</div><div class="line">        align-content:center;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        width: 40%;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>3.<br>opera中，貌似可用旧的盒子语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:-webkit-box;</div><div class="line">        -webkit-box-pack:center;</div><div class="line">        -webkit-box-align:center;</div><div class="line">        box-pack:center;</div><div class="line">        box-align:center;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        margin-right:30px;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line">    dl:last-child&#123;</div><div class="line">        margin-right:0;</div><div class="line">    &#125;</div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>还有其他的方法，但没必要多写了。</p>
+]]></content>
     </entry>
     
     <entry>
@@ -210,31 +197,5 @@ dd{
     </entry>
     
   
-  
-    
-    <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://kameii.tk/blog/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[search]]></title>
-      <url>http://kameii.tk/blog/search/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://kameii.tk/blog/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[about]]></title>
-      <url>http://kameii.tk/blog/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
   
 </search>

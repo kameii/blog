@@ -86,6 +86,16 @@
 
 
 
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?8cda95592ae790d68f0bcd8aa47f56da";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
 
 </head>
 <body>
@@ -187,7 +197,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/c/">c#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/俄语/">俄语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/待看标准的经验记录/">待看标准的经验记录</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/absolute定位/">absolute定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/c/">c#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css伪类/">css伪类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/俄语/">俄语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/待看标准的经验记录/">待看标准的经验记录</a></li></ul>
                     </div>
                 </section>
                 
@@ -263,6 +273,138 @@
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-hexo相关/hexo部署出错" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/08/19/hexo相关/hexo部署出错/" class="article-date">
+      <time datetime="2016-08-19T14:15:32.094Z" itemprop="datePublished">2016-08-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/08/19/hexo相关/hexo部署出错/">hexo部署出错</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>执行命令</p>
+<pre><code>hexo d
+</code></pre><p>出错</p>
+<pre><code>fatal: Not a git repository (or any of the parent directories)
+</code></pre><p>在网上查了下，有说删掉<code>.deploy_git</code>就行，但我试了下。不行，后来看到有人提到将隐藏目录<code>.git</code>复制到<code>.deploy_git</code>里面。我看了下<code>.deploy_git</code>文件夹，里面果然没有了。如果之前有提交到github的话，先复制一份，然后将里面的<code>.git</code>文件夹复制到现在要提交的<code>.deploy_git</code>里面就可以了。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/随笔/">随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-css学习笔记/css学习笔记(三)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/" class="article-date">
+      <time datetime="2016-08-19T14:15:31.826Z" itemprop="datePublished">2016-08-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/">css学习笔记（三）其它选择器</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>-相邻选择器：<code>h1+p{}</code>指的是与h1后面相邻的一个p。<br><em>element1</em>~<em>element2</em> 选择器，通用兄弟元素选择器：出现在element1后面全部的element2，两者都同一的父元素，可隔其它元素。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/css学习笔记/">css学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-c&#39;sharp学习笔记/c&#39;sharp学习笔记（二）" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -451,39 +593,12 @@ width: 1000px;
 &lt;/style&gt;
 &lt;div class=&apos;ww&apos;&gt;test&lt;/div&gt;
 </code></pre><p>不定义margin，且元素宽度不是100%，只有left和right，偏左，定义margin，居中。</p>
-<p>2.居中dl项目</p>
-<pre><code>&lt;style&gt;
-.test{
-    display:-webkit-box;
-    display:-moz-box;
-    -webkit-box-pack:center;
-    -webkit-box-align:center;
-    -moz-box-pack:center;
-    -moz-box-align:center;
-    display:box;
-    box-pack:center;
-    box-align:center;
-}
-dl{
-    margin-right:30px;
-}
-dd{
-    margin:0;
-}
-&lt;/style&gt;
-&lt;div class=&quot;test&quot;&gt;
-    &lt;dl&gt;
-        &lt;dt&gt;链接组1&lt;/dt&gt;
-        &lt;dd&gt;&lt;a href=&quot;/superwebview&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;
-        &lt;dd&gt;&lt;a href=&quot;/deepengine&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;
-    &lt;/dl&gt;
-    &lt;dl&gt;
-        &lt;dt&gt;链接组2&lt;/dt&gt;
-        &lt;dd&gt;&lt;a href=&quot;/vipservice/plan&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;
-        &lt;dd&gt;&lt;a href=&quot;/vipservice/channel&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;
-    &lt;/dl&gt;
-&lt;/div&gt;
-</code></pre>
+<p>2.居中dl项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;test&quot;&gt;</div><div class="line">    &lt;dl&gt;</div><div class="line">        &lt;dt&gt;链接组1&lt;/dt&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/superwebview&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/deepengine&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;</div><div class="line">    &lt;/dl&gt;</div><div class="line">    &lt;dl&gt;</div><div class="line">        &lt;dt&gt;链接组2&lt;/dt&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/vipservice/plan&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/vipservice/channel&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;</div><div class="line">    &lt;/dl&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>    </p>
+<p>css样式：<br>1.<strong>推荐</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:flex;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        margin:auto;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>2.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:flex;</div><div class="line">        justify-content:center;</div><div class="line">        align-content:center;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        width: 40%;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>3.<br>opera中，貌似可用旧的盒子语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:-webkit-box;</div><div class="line">        -webkit-box-pack:center;</div><div class="line">        -webkit-box-align:center;</div><div class="line">        box-pack:center;</div><div class="line">        box-align:center;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        margin-right:30px;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line">    dl:last-child&#123;</div><div class="line">        margin-right:0;</div><div class="line">    &#125;</div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>还有其他的方法，但没必要多写了。</p>
+
       
     </div>
     

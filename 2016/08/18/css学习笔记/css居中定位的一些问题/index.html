@@ -43,7 +43,7 @@ width: 1000px;
 &amp;lt;/style&amp;gt;
 &amp;lt;div class=&amp;apos;ww&amp;apos;&amp;gt;test&amp;lt;/div&amp;gt;
 不定义margin，且元素宽度不是100%，只有left和right，偏左，">
-<meta property="og:updated_time" content="2016-08-19T13:27:12.954Z">
+<meta property="og:updated_time" content="2016-08-24T09:22:57.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css居中定位的一些问题">
 <meta name="twitter:description" content="1.
@@ -117,6 +117,16 @@ width: 1000px;
 
 
 
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?8cda95592ae790d68f0bcd8aa47f56da";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
 
 </head>
@@ -219,7 +229,7 @@ width: 1000px;
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/c/">c#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/俄语/">俄语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/待看标准的经验记录/">待看标准的经验记录</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/absolute定位/">absolute定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/c/">c#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css伪类/">css伪类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/俄语/">俄语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/待看标准的经验记录/">待看标准的经验记录</a></li></ul>
                     </div>
                 </section>
                 
@@ -350,39 +360,12 @@ width: 1000px;
 &lt;/style&gt;
 &lt;div class=&apos;ww&apos;&gt;test&lt;/div&gt;
 </code></pre><p>不定义margin，且元素宽度不是100%，只有left和right，偏左，定义margin，居中。</p>
-<p>2.居中dl项目</p>
-<pre><code>&lt;style&gt;
-.test{
-    display:-webkit-box;
-    display:-moz-box;
-    -webkit-box-pack:center;
-    -webkit-box-align:center;
-    -moz-box-pack:center;
-    -moz-box-align:center;
-    display:box;
-    box-pack:center;
-    box-align:center;
-}
-dl{
-    margin-right:30px;
-}
-dd{
-    margin:0;
-}
-&lt;/style&gt;
-&lt;div class=&quot;test&quot;&gt;
-    &lt;dl&gt;
-        &lt;dt&gt;链接组1&lt;/dt&gt;
-        &lt;dd&gt;&lt;a href=&quot;/superwebview&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;
-        &lt;dd&gt;&lt;a href=&quot;/deepengine&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;
-    &lt;/dl&gt;
-    &lt;dl&gt;
-        &lt;dt&gt;链接组2&lt;/dt&gt;
-        &lt;dd&gt;&lt;a href=&quot;/vipservice/plan&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;
-        &lt;dd&gt;&lt;a href=&quot;/vipservice/channel&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;
-    &lt;/dl&gt;
-&lt;/div&gt;
-</code></pre>
+<p>2.居中dl项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;test&quot;&gt;</div><div class="line">    &lt;dl&gt;</div><div class="line">        &lt;dt&gt;链接组1&lt;/dt&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/superwebview&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/deepengine&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;</div><div class="line">    &lt;/dl&gt;</div><div class="line">    &lt;dl&gt;</div><div class="line">        &lt;dt&gt;链接组2&lt;/dt&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/vipservice/plan&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/vipservice/channel&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;</div><div class="line">    &lt;/dl&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>    </p>
+<p>css样式：<br>1.<strong>推荐</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:flex;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        margin:auto;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>2.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:flex;</div><div class="line">        justify-content:center;</div><div class="line">        align-content:center;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        width: 40%;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>3.<br>opera中，貌似可用旧的盒子语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:-webkit-box;</div><div class="line">        -webkit-box-pack:center;</div><div class="line">        -webkit-box-align:center;</div><div class="line">        box-pack:center;</div><div class="line">        box-align:center;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        margin-right:30px;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line">    dl:last-child&#123;</div><div class="line">        margin-right:0;</div><div class="line">    &#125;</div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>还有其他的方法，但没必要多写了。</p>
+
       
     </div>
     
@@ -393,7 +376,7 @@ dd{
         <p><span>Title:</span><a href="/blog/2016/08/18/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">kameii</a></p>
         <p><span>Created:</span>2016-08-18, 20:01:14</p>
-        <p><span>Updated:</span>2016-08-19, 21:27:12</p>
+        <p><span>Updated:</span>2016-08-24, 17:22:57</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/blog/2016/08/18/css学习笔记/css居中定位的一些问题/" title="css居中定位的一些问题">http://kameii.tk/blog/blog/2016/08/18/css学习笔记/css居中定位的一些问题/</a>
             <span class="copy-path" data-clipboard-text="From http://kameii.tk/blog/blog/2016/08/18/css学习笔记/css居中定位的一些问题/　　By kameii" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -499,7 +482,7 @@ dd{
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/hexo相关/hexo文章标题/">hexo文章标题不能有#</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/hexo相关/hexo部署在网站子目录/">hexo部署在网站子目录</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/css学习笔记/css学习笔记(二)/">css学习笔记（二）：伪类选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/css学习笔记/css学习笔记(一)/">css学习笔记（一）：属性选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/俄语学习笔记/俄语学习笔记(一)/">语音相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/js运算符相关/">js运算符相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/hexo相关/hexo部署出错/">hexo部署出错</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/">css学习笔记（三）其它选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记（二）/">c#学习笔记(二)：变量作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/">c#学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/18/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/17/建站小记/">建站小记</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/24/css学习笔记/position的absolute定位/">position的absolute定位</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/24/css学习笔记/after和before伪类的一些问题/">before和after伪类的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/hexo相关/hexo文章标题/">hexo文章标题不能有#</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/hexo相关/hexo部署在网站子目录/">hexo部署在网站子目录</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/css学习笔记/css学习笔记(二)/">css学习笔记（二）：伪类选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/20/css学习笔记/css学习笔记(一)/">css学习笔记（一）：属性选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/俄语学习笔记/俄语学习笔记(一)/">语音相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/js运算符相关/">js运算符相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/hexo相关/hexo部署出错/">hexo部署出错</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/css学习笔记/css学习笔记(三)/">css学习笔记（三）其它选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记（二）/">c#学习笔记(二)：变量作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/19/c'sharp学习笔记/c'sharp学习笔记(一)/">c#学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/18/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/08/17/建站小记/">建站小记</a></li></ul>
 
 
 
