@@ -199,7 +199,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css伪类/">css伪类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css定位/">css定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css选择器/">css选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js赋值/">js赋值</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/俄语/">俄语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/继承/">继承</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css伪类/">css伪类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css定位/">css定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css选择器/">css选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js赋值/">js赋值</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/osx/">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/virtualbox/">virtualbox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/俄语/">俄语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/继承/">继承</a></li></ul>
                     </div>
                 </section>
                 
@@ -275,6 +275,75 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-hexo相关/hexo部署在网站子目录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/12/09/hexo相关/hexo部署在网站子目录/" class="article-date">
+      <time datetime="2016-12-09T03:39:26.576Z" itemprop="datePublished">2016-12-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/12/09/hexo相关/hexo部署在网站子目录/">hexo部署在网站子目录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>为了将hexo部署在网站子目录，这两天花了不少时间，主要就是弄路径的问题。部分按照文件里的提示来就可以，但有些地方还得修改。<br>如果网站是<code>http://yoursite.com</code>，然后在github建了个gh-pages分支，将其设置为blog子目录，将hexo的_config.yml配置文件中的<strong># URL</strong>部分按照提示修改，也就是</p>
+<pre><code>url: http://yoursite.com/blog
+root: /blog/
+</code></pre><p>然后在主题的_config.yml中将<strong>root_url</strong>设置为<code>/blog/</code>。<br>由于我用的主题是yelee，按上述修改后，貌似会使左侧菜单中的链接出错，本来应该是<code>/blog/archives</code>的，但变成了<code>/blog/blog/archives</code>，查看主题代码，<br>在layout\_partial\left-col.ejs中看到</p>
+<pre><code>&lt;li&gt;&lt;a href=&quot;&lt;%- theme.root_url %&gt;&lt;%- url_for(theme.menu[i]) %&gt;&quot;&gt;&lt;%= i %&gt;&lt;/a&gt;&lt;/li&gt;
+</code></pre><p>将<code>&lt;%- theme.root_url %&gt;</code>删掉，显示正常。<br>此外，在文章中插入图片，本来应该是<code>/img/xx</code>，现在要加<code>/blog</code>才行。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/随笔/">随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-css学习笔记/htmlcss杂记" class="article article-type-post" itemscope itemprop="blogPost">
   
