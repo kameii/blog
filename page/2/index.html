@@ -199,7 +199,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css伪类/">css伪类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css定位/">css定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css选择器/">css选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js赋值/">js赋值</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/osx/">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/virtualbox/">virtualbox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/俄语/">俄语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/继承/">继承</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css伪类/">css伪类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css定位/">css定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css选择器/">css选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js赋值/">js赋值</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/osx/">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/virtualbox/">virtualbox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/俄语/">俄语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/继承/">继承</a></li></ul>
                     </div>
                 </section>
                 
@@ -275,6 +275,74 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-hexo相关/hexo部署出错" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/12/09/hexo相关/hexo部署出错/" class="article-date">
+      <time datetime="2016-12-09T03:39:26.607Z" itemprop="datePublished">2016-12-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/12/09/hexo相关/hexo部署出错/">hexo部署出错</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>执行命令</p>
+<pre><code>hexo d
+</code></pre><p>出错</p>
+<pre><code>fatal: Not a git repository (or any of the parent directories)
+</code></pre><p>在网上查了下，有说删掉<code>.deploy_git</code>就行，但我试了下。不行，后来看到有人提到将隐藏目录<code>.git</code>复制到<code>.deploy_git</code>里面。我看了下<code>.deploy_git</code>文件夹，里面果然没有了。如果之前有提交到github的话，先复制一份，然后将里面的<code>.git</code>文件夹复制到现在要提交的<code>.deploy_git</code>里面就可以了。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/随笔/">随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-hexo相关/hexo部署在网站子目录" class="article article-type-post" itemscope itemprop="blogPost">
   

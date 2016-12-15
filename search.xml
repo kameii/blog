@@ -4,6 +4,13 @@
   
     
     <entry>
+      <title><![CDATA[test命令]]></title>
+      <url>http://kameii.tk/blog/blog/2016/12/15/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/test%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>test 在比较的时候，比如字符串<code>test &#39;foo&#39; = &#39;bar&#39;2</code>，在测试标志两边必须有空格，<br>不能写成<code>test &#39;foo&#39;=&#39;bar&#39;</code>，不然结果总是true。<br>[]也差不多。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[virtalbox安装osx 10.11]]></title>
       <url>http://kameii.tk/blog/blog/2016/12/13/virtual%E5%AE%89%E8%A3%85osx/</url>
       <content type="html"><![CDATA[<p>试着用virtualbox装了个osx，版本是OS X 10.11.1(15B42).cdr。<br>电脑是五年前的渣配，32位。</p>
