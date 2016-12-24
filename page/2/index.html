@@ -276,6 +276,136 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-js学习笔记/js赋值语句" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/12/09/js学习笔记/js赋值语句/" class="article-date">
+      <time datetime="2016-12-09T03:39:26.744Z" itemprop="datePublished">2016-12-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/12/09/js学习笔记/js赋值语句/">js赋值语句</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>在github上看到<a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Chinese#coding-questions" target="_blank" rel="external">前端工作面试问题</a>,<br>其中有一题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var foo = &#123;n: 1&#125;;</div><div class="line">var bar = foo;</div><div class="line">foo.x = foo = &#123;n: 2&#125;;</div></pre></td></tr></table></figure></p>
+<p>问foo.x的值是什么？这里牵扯到赋值运算的问题。<br>查看stackoverflow和<a href="http://www.ecma-international.org/ecma-262/7.0/#sec-assignment-operators-runtime-semantics-evaluation" target="_blank" rel="external">ecma规格说明书</a>，<br><blockquote class="pullquote"><p>1.If LeftHandSideExpression is neither an ObjectLiteral nor an ArrayLiteral, then<br>　　a.Let lref be the result of evaluating LeftHandSideExpression.</p>
+</blockquote><br>也就是说，第一步要先算左侧表达式的值。而在<code>foo.x = foo = {n: 2};</code>中，foo.x是左侧表达式，但x并未定义，所以是undefined。<br>然后计算右侧<code>foo = {n: 2}</code>，这时foo指向{n: 2}，然后这个表达式返回{n: 2}。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js赋值/">js赋值</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hexo相关/hexo文章标题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/12/09/hexo相关/hexo文章标题/" class="article-date">
+      <time datetime="2016-12-09T03:39:26.634Z" itemprop="datePublished">2016-12-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/12/09/hexo相关/hexo文章标题/">hexo文章标题不能有#</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>想在文章标题里写c#，虽然在首页可以看到，但一点进去就发现只解析到#前。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/随笔/">随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-hexo相关/hexo部署出错" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

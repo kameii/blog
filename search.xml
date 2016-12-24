@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title><![CDATA[汇编的一些基础知识记录]]></title>
+      <url>http://kameii.tk/blog/blog/2016/12/24/%E6%B1%87%E7%BC%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      <content type="html"><![CDATA[<h2 id="根据王爽《汇编语言》"><a href="#根据王爽《汇编语言》" class="headerlink" title="根据王爽《汇编语言》"></a>根据王爽《汇编语言》</h2><p>总线：地址总线、控制总线和数据总线。<br>地址总线有N根，宽度N，可寻找2^N次方个内存单元。<br>控制总线宽度N，N/8个字节。</p>
+<p>16位结构CPU指的是：<br>1.运算器一次最多处理16位数据；<br>2.寄存器最大宽度为16位；<br>3.寄存器和运算器之间通路为16位。</p>
+<p>一个存储单元是一字节(Byte)。0~7FFFH的地址空间是32KB。</p>
+<p>物理地址=段地址X16+偏移地址。<br>偏移地址16位，其寻址能力是2^16/1024=64KB，按地址空间大小计算，不是以个数计算。</p>
+<p>字由两个字节构成。字单元，字节单元。</p>
+<p>以栈的方式访问内存空间，入栈出栈以字为单位。入栈时，栈顶从高位向低位增长。<br>push，先sp=sp-2，再放入数据<br>pop，先将数据给寄存器，再sp=sp+2，指向栈顶下的单元，但该数据还存在，将被覆盖</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[virtualbox安装linux各种发行版小记]]></title>
+      <url>http://kameii.tk/blog/blog/2016/12/19/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/linux%E5%90%84%E7%A7%8D%E5%8F%91%E8%A1%8C%E7%89%88%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>本文没什么值得一看的东西，只是小结式的记录……</p>
+<hr>
+<p>1.centos。初学linux用的是centos，因为要从图书馆借了鸟哥的linux私房菜第三版，恰好菜鸟学院上的也是centos，所以下了个centos6.8。本来我还担心装了后系统会很卡，没想到挺好，很流畅。不过学了会后，我就发现centos6.8内核版本很低啊，而且鸟哥在网上的教程已经更新。下个新的吧。因为机子是32位，只能下centos 7-1511，内核也只是3.10多啊。<br>centos7安装按照鸟哥的来就行了，很简单，就是安装过程略久。<br>7是以gpt方式安装的。在安装界面输入inst.gpt强制gpt分区，按enter之后出现黑屏，后来想了下，可能是virtualbox处理器没启用PAE/NX。选中后可以了。<br>话说刚开始学就接受两种启动方式，略混乱啊。不过目前看systemd是大势所趋了，不得不学啊。</p>
+<p>2.ubuntu。其实以前也下过ubuntu，不过那时候还没打算学linux，所以也没怎么用，加上硬盘坏了，也就不了了之了。这次下了个ubuntu桌面版16.04。然而因为电脑差，ubuntu16.04卡的要死，比我装的osx都卡。卸载那些自带的乱七八糟的软件都很慢，最后只能无奈删了。<br>后来下了个minimal的16.10版，老是在安装软件的时候失败，无语。试了几次后总算装好了，不过也很卡，体验不好。其间还装了个ubuntu server，果然没有那些软件就很轻松了。</p>
+<p>3.archlinux。听说archlinux是滚动更新，貌似很厉害，所以我又下了archlinux。看着官网和一些教程后，在装ubuntu的同一天晚上就装上了。不愧为轻量级，用得很轻松。官网wiki感觉文档详细。</p>
+<p>4.deepin。国产的，第一感觉感觉略炫。有人说卡，我用的倒还行。试了下感觉不错，挺方便的。我感觉适合新手。</p>
+<p>5.gentoo。这是目前安装过的最麻烦的。本来我还觉得archlinux麻烦，试过gentoo后才发现这个麻烦多了，还要自己编译内核。当然，其实按照官网的手册以及网上的一些教程，其实也不难，就是麻烦。安装的时候还发生了<code>FATAL:INT18:BOOT FAILURE</code>的错误，我忘了这是安装时还是安装好发生的，不过貌似是要更改启动顺序，将硬盘放在第一位，光驱第二。</p>
+<p>其实还试着装过fedora，但不知怎么回事，怎么都出不来安装界面，无奈放弃。<br>不限linux的话，还装过freebsd，只是感受下而已。</p>
+<p>总结下难度：gentoo&gt;archlinux&gt;其他<br>安装其实就是分区格式化挂载，其间可能会要chroot，编译内核什么的。<br>今后有时候就去试试LFS，看网上说的那么厉害，有点跃跃欲试啊。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[test命令]]></title>
       <url>http://kameii.tk/blog/blog/2016/12/15/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/test%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<p>test 在比较的时候，比如字符串<code>test &#39;foo&#39; = &#39;bar&#39;2</code>，在测试标志两边必须有空格，<br>不能写成<code>test &#39;foo&#39;=&#39;bar&#39;</code>，不然结果总是true。<br>[]也差不多。</p>
@@ -15,7 +42,7 @@
       <url>http://kameii.tk/blog/blog/2016/12/13/virtual%E5%AE%89%E8%A3%85osx/</url>
       <content type="html"><![CDATA[<p>试着用virtualbox装了个osx，版本是OS X 10.11.1(15B42).cdr。<br>电脑是五年前的渣配，32位。</p>
 <p>初次安装，到了dsmos has arrived就卡住不动，网上找了找，发现这篇教程<a href="http://815222418.iteye.com/blog/2312250" target="_blank" rel="external">基于Windows系统VirtualBox部署OS X El Capitan 10.11</a>，按照上面的基本上就行了。<br>后来又找到这篇<a href="http://www.cfan.com.cn/2015/0720/120651.shtml" target="_blank" rel="external">移植苹果，Windows PC上安装MacOS</a>，都差不多。<br>安装的时候发现没改虚拟电脑位置，默认c盘，所以又因为满了而失败了一次。<br>后来找到<a href="http://www.cnblogs.com/xwdreamer/archive/2013/10/11/3363451.html" target="_blank" rel="external">修改VirtualBox虚拟机默认存储路径及虚拟机迁移方法</a>，<br>新建个虚拟机，通过使用已有的虚拟硬盘文件装上了。</p>
-<p>后来关机再重启却又要求我重装，之后试了试把右上角的osx base system推出后，不知道怎么回事就没有要求重装了。现在貌似没事了。不过进系统了也卡的很，果然电脑太差了。</p>
+<p>后来关机再重启却又要求我重装，之后把右上角的osx base system推出后，就没有要求重装了。其实貌似应该直接从virtualbox删除盘片的……安装linux的时候大部分都会自己弹出盘片，倒是没注意osx。不过进系统了也卡的很，果然电脑太差了。</p>
 ]]></content>
     </entry>
     

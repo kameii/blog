@@ -276,6 +276,143 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-汇编学习笔记/汇编基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/12/24/汇编学习笔记/汇编基础知识/" class="article-date">
+      <time datetime="2016-12-24T11:01:29.695Z" itemprop="datePublished">2016-12-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/12/24/汇编学习笔记/汇编基础知识/">汇编的一些基础知识记录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="根据王爽《汇编语言》"><a href="#根据王爽《汇编语言》" class="headerlink" title="根据王爽《汇编语言》"></a>根据王爽《汇编语言》</h2><p>总线：地址总线、控制总线和数据总线。<br>地址总线有N根，宽度N，可寻找2^N次方个内存单元。<br>控制总线宽度N，N/8个字节。</p>
+<p>16位结构CPU指的是：<br>1.运算器一次最多处理16位数据；<br>2.寄存器最大宽度为16位；<br>3.寄存器和运算器之间通路为16位。</p>
+<p>一个存储单元是一字节(Byte)。0~7FFFH的地址空间是32KB。</p>
+<p>物理地址=段地址X16+偏移地址。<br>偏移地址16位，其寻址能力是2^16/1024=64KB，按地址空间大小计算，不是以个数计算。</p>
+<p>字由两个字节构成。字单元，字节单元。</p>
+<p>以栈的方式访问内存空间，入栈出栈以字为单位。入栈时，栈顶从高位向低位增长。<br>push，先sp=sp-2，再放入数据<br>pop，先将数据给寄存器，再sp=sp+2，指向栈顶下的单元，但该数据还存在，将被覆盖</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/汇编/">汇编</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-linux学习笔记/linux各种发行版安装小记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/12/19/linux学习笔记/linux各种发行版安装小记/" class="article-date">
+      <time datetime="2016-12-18T16:32:30.020Z" itemprop="datePublished">2016-12-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/12/19/linux学习笔记/linux各种发行版安装小记/">virtualbox安装linux各种发行版小记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>本文没什么值得一看的东西，只是小结式的记录……</p>
+<hr>
+<p>1.centos。初学linux用的是centos，因为要从图书馆借了鸟哥的linux私房菜第三版，恰好菜鸟学院上的也是centos，所以下了个centos6.8。本来我还担心装了后系统会很卡，没想到挺好，很流畅。不过学了会后，我就发现centos6.8内核版本很低啊，而且鸟哥在网上的教程已经更新。下个新的吧。因为机子是32位，只能下centos 7-1511，内核也只是3.10多啊。<br>centos7安装按照鸟哥的来就行了，很简单，就是安装过程略久。<br>7是以gpt方式安装的。在安装界面输入inst.gpt强制gpt分区，按enter之后出现黑屏，后来想了下，可能是virtualbox处理器没启用PAE/NX。选中后可以了。<br>话说刚开始学就接受两种启动方式，略混乱啊。不过目前看systemd是大势所趋了，不得不学啊。</p>
+<p>2.ubuntu。其实以前也下过ubuntu，不过那时候还没打算学linux，所以也没怎么用，加上硬盘坏了，也就不了了之了。这次下了个ubuntu桌面版16.04。然而因为电脑差，ubuntu16.04卡的要死，比我装的osx都卡。卸载那些自带的乱七八糟的软件都很慢，最后只能无奈删了。<br>后来下了个minimal的16.10版，老是在安装软件的时候失败，无语。试了几次后总算装好了，不过也很卡，体验不好。其间还装了个ubuntu server，果然没有那些软件就很轻松了。</p>
+<p>3.archlinux。听说archlinux是滚动更新，貌似很厉害，所以我又下了archlinux。看着官网和一些教程后，在装ubuntu的同一天晚上就装上了。不愧为轻量级，用得很轻松。官网wiki感觉文档详细。</p>
+<p>4.deepin。国产的，第一感觉感觉略炫。有人说卡，我用的倒还行。试了下感觉不错，挺方便的。我感觉适合新手。</p>
+<p>5.gentoo。这是目前安装过的最麻烦的。本来我还觉得archlinux麻烦，试过gentoo后才发现这个麻烦多了，还要自己编译内核。当然，其实按照官网的手册以及网上的一些教程，其实也不难，就是麻烦。安装的时候还发生了<code>FATAL:INT18:BOOT FAILURE</code>的错误，我忘了这是安装时还是安装好发生的，不过貌似是要更改启动顺序，将硬盘放在第一位，光驱第二。</p>
+<p>其实还试着装过fedora，但不知怎么回事，怎么都出不来安装界面，无奈放弃。<br>不限linux的话，还装过freebsd，只是感受下而已。</p>
+<p>总结下难度：gentoo&gt;archlinux&gt;其他<br>安装其实就是分区格式化挂载，其间可能会要chroot，编译内核什么的。<br>今后有时候就去试试LFS，看网上说的那么厉害，有点跃跃欲试啊。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/linux学习笔记/">linux学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/linux/">linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-linux学习笔记/test命令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -371,7 +508,7 @@
           
         <p>试着用virtualbox装了个osx，版本是OS X 10.11.1(15B42).cdr。<br>电脑是五年前的渣配，32位。</p>
 <p>初次安装，到了dsmos has arrived就卡住不动，网上找了找，发现这篇教程<a href="http://815222418.iteye.com/blog/2312250" target="_blank" rel="external">基于Windows系统VirtualBox部署OS X El Capitan 10.11</a>，按照上面的基本上就行了。<br>后来又找到这篇<a href="http://www.cfan.com.cn/2015/0720/120651.shtml" target="_blank" rel="external">移植苹果，Windows PC上安装MacOS</a>，都差不多。<br>安装的时候发现没改虚拟电脑位置，默认c盘，所以又因为满了而失败了一次。<br>后来找到<a href="http://www.cnblogs.com/xwdreamer/archive/2013/10/11/3363451.html" target="_blank" rel="external">修改VirtualBox虚拟机默认存储路径及虚拟机迁移方法</a>，<br>新建个虚拟机，通过使用已有的虚拟硬盘文件装上了。</p>
-<p>后来关机再重启却又要求我重装，之后试了试把右上角的osx base system推出后，不知道怎么回事就没有要求重装了。现在貌似没事了。不过进系统了也卡的很，果然电脑太差了。</p>
+<p>后来关机再重启却又要求我重装，之后把右上角的osx base system推出后，就没有要求重装了。其实貌似应该直接从virtualbox删除盘片的……安装linux的时候大部分都会自己弹出盘片，倒是没注意osx。不过进系统了也卡的很，果然电脑太差了。</p>
 
       
     </div>
@@ -787,136 +924,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js学习笔记/js赋值语句" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/12/09/js学习笔记/js赋值语句/" class="article-date">
-      <time datetime="2016-12-09T03:39:26.744Z" itemprop="datePublished">2016-12-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/js学习笔记/js赋值语句/">js赋值语句</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>在github上看到<a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Chinese#coding-questions" target="_blank" rel="external">前端工作面试问题</a>,<br>其中有一题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var foo = &#123;n: 1&#125;;</div><div class="line">var bar = foo;</div><div class="line">foo.x = foo = &#123;n: 2&#125;;</div></pre></td></tr></table></figure></p>
-<p>问foo.x的值是什么？这里牵扯到赋值运算的问题。<br>查看stackoverflow和<a href="http://www.ecma-international.org/ecma-262/7.0/#sec-assignment-operators-runtime-semantics-evaluation" target="_blank" rel="external">ecma规格说明书</a>，<br><blockquote class="pullquote"><p>1.If LeftHandSideExpression is neither an ObjectLiteral nor an ArrayLiteral, then<br>　　a.Let lref be the result of evaluating LeftHandSideExpression.</p>
-</blockquote><br>也就是说，第一步要先算左侧表达式的值。而在<code>foo.x = foo = {n: 2};</code>中，foo.x是左侧表达式，但x并未定义，所以是undefined。<br>然后计算右侧<code>foo = {n: 2}</code>，这时foo指向{n: 2}，然后这个表达式返回{n: 2}。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js赋值/">js赋值</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo相关/hexo文章标题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/12/09/hexo相关/hexo文章标题/" class="article-date">
-      <time datetime="2016-12-09T03:39:26.634Z" itemprop="datePublished">2016-12-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/hexo相关/hexo文章标题/">hexo文章标题不能有#</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>想在文章标题里写c#，虽然在首页可以看到，但一点进去就发现只解析到#前。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/随笔/">随笔</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
     </div>
 
       

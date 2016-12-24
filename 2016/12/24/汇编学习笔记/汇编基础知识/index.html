@@ -15,16 +15,25 @@
 
 
 
-<meta name="description" content="test 在比较的时候，比如字符串test &amp;#39;foo&amp;#39; = &amp;#39;bar&amp;#39;2，在测试标志两边必须有空格，不能写成test &amp;#39;foo&amp;#39;=&amp;#39;bar&amp;#39;，不然结果总是true。[]也差不多。">
+<meta name="description" content="根据王爽《汇编语言》总线：地址总线、控制总线和数据总线。地址总线有N根，宽度N，可寻找2^N次方个内存单元。控制总线宽度N，N/8个字节。
+16位结构CPU指的是：1.运算器一次最多处理16位数据；2.寄存器最大宽度为16位；3.寄存器和运算器之间通路为16位。
+一个存储单元是一字节(Byte)。0~7FFFH的地址空间是32KB。
+物理地址=段地址X16+偏移地址。偏移地址16位，其寻址能力是2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test命令">
-<meta property="og:url" content="http://kameii.tk/blog/2016/12/15/linux学习笔记/test命令/index.html">
+<meta property="og:title" content="汇编的一些基础知识记录">
+<meta property="og:url" content="http://kameii.tk/blog/2016/12/24/汇编学习笔记/汇编基础知识/index.html">
 <meta property="og:site_name" content="kameii'site">
-<meta property="og:description" content="test 在比较的时候，比如字符串test &amp;#39;foo&amp;#39; = &amp;#39;bar&amp;#39;2，在测试标志两边必须有空格，不能写成test &amp;#39;foo&amp;#39;=&amp;#39;bar&amp;#39;，不然结果总是true。[]也差不多。">
-<meta property="og:updated_time" content="2016-12-15T16:17:02.438Z">
+<meta property="og:description" content="根据王爽《汇编语言》总线：地址总线、控制总线和数据总线。地址总线有N根，宽度N，可寻找2^N次方个内存单元。控制总线宽度N，N/8个字节。
+16位结构CPU指的是：1.运算器一次最多处理16位数据；2.寄存器最大宽度为16位；3.寄存器和运算器之间通路为16位。
+一个存储单元是一字节(Byte)。0~7FFFH的地址空间是32KB。
+物理地址=段地址X16+偏移地址。偏移地址16位，其寻址能力是2">
+<meta property="og:updated_time" content="2016-12-24T17:45:39.896Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test命令">
-<meta name="twitter:description" content="test 在比较的时候，比如字符串test &amp;#39;foo&amp;#39; = &amp;#39;bar&amp;#39;2，在测试标志两边必须有空格，不能写成test &amp;#39;foo&amp;#39;=&amp;#39;bar&amp;#39;，不然结果总是true。[]也差不多。">
+<meta name="twitter:title" content="汇编的一些基础知识记录">
+<meta name="twitter:description" content="根据王爽《汇编语言》总线：地址总线、控制总线和数据总线。地址总线有N根，宽度N，可寻找2^N次方个内存单元。控制总线宽度N，N/8个字节。
+16位结构CPU指的是：1.运算器一次最多处理16位数据；2.寄存器最大宽度为16位；3.寄存器和运算器之间通路为16位。
+一个存储单元是一字节(Byte)。0~7FFFH的地址空间是32KB。
+物理地址=段地址X16+偏移地址。偏移地址16位，其寻址能力是2">
 
 <link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
 
@@ -54,7 +63,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>test命令 | kameii&#39;site</title>
+<title>汇编的一些基础知识记录 | kameii&#39;site</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -273,11 +282,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-linux学习笔记/test命令" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-汇编学习笔记/汇编基础知识" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/15/linux学习笔记/test命令/" class="article-date">
-      <time datetime="2016-12-15T12:55:57.737Z" itemprop="datePublished">2016-12-15</time>
+      <a href="/blog/2016/12/24/汇编学习笔记/汇编基础知识/" class="article-date">
+      <time datetime="2016-12-24T11:01:29.695Z" itemprop="datePublished">2016-12-24</time>
 </a>
 
 
@@ -292,7 +301,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      test命令
+      汇编的一些基础知识记录
     </h1>
   
 
@@ -301,15 +310,11 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/linux学习笔记/">linux学习笔记</a>
+    <a class="article-category-link" href="/blog/categories/汇编/">汇编</a>
     </div>
 
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/shell/">shell</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -317,7 +322,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>test 在比较的时候，比如字符串<code>test &#39;foo&#39; = &#39;bar&#39;2</code>，在测试标志两边必须有空格，<br>不能写成<code>test &#39;foo&#39;=&#39;bar&#39;</code>，不然结果总是true。<br>[]也差不多。</p>
+        <h2 id="根据王爽《汇编语言》"><a href="#根据王爽《汇编语言》" class="headerlink" title="根据王爽《汇编语言》"></a>根据王爽《汇编语言》</h2><p>总线：地址总线、控制总线和数据总线。<br>地址总线有N根，宽度N，可寻找2^N次方个内存单元。<br>控制总线宽度N，N/8个字节。</p>
+<p>16位结构CPU指的是：<br>1.运算器一次最多处理16位数据；<br>2.寄存器最大宽度为16位；<br>3.寄存器和运算器之间通路为16位。</p>
+<p>一个存储单元是一字节(Byte)。0~7FFFH的地址空间是32KB。</p>
+<p>物理地址=段地址X16+偏移地址。<br>偏移地址16位，其寻址能力是2^16/1024=64KB，按地址空间大小计算，不是以个数计算。</p>
+<p>字由两个字节构成。字单元，字节单元。</p>
+<p>以栈的方式访问内存空间，入栈出栈以字为单位。入栈时，栈顶从高位向低位增长。<br>push，先sp=sp-2，再放入数据<br>pop，先将数据给寄存器，再sp=sp+2，指向栈顶下的单元，但该数据还存在，将被覆盖</p>
 
       
     </div>
@@ -326,13 +336,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/2016/12/15/linux学习笔记/test命令/">test命令</a></p>
+        <p><span>本文标题:</span><a href="/blog/2016/12/24/汇编学习笔记/汇编基础知识/">汇编的一些基础知识记录</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">kameii</a></p>
-        <p><span>发布时间:</span>2016-12-15, 20:55:57</p>
-        <p><span>最后更新:</span>2016-12-16, 00:17:02</p>
+        <p><span>发布时间:</span>2016-12-24, 19:01:29</p>
+        <p><span>最后更新:</span>2016-12-25, 01:45:39</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2016/12/15/linux学习笔记/test命令/" title="test命令">http://kameii.tk/blog/blog/2016/12/15/linux学习笔记/test命令/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://kameii.tk/blog/blog/2016/12/15/linux学习笔记/test命令/　　作者: kameii" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/blog/2016/12/24/汇编学习笔记/汇编基础知识/" title="汇编的一些基础知识记录">http://kameii.tk/blog/blog/2016/12/24/汇编学习笔记/汇编基础知识/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://kameii.tk/blog/blog/2016/12/24/汇编学习笔记/汇编基础知识/　　作者: kameii" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -344,16 +354,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/blog/2016/12/19/linux学习笔记/linux各种发行版安装小记/">
-                    virtualbox安装linux各种发行版小记
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/blog/2016/12/13/virtual安装osx/">
-                    virtalbox安装osx 10.11
+                <a href="/blog/2016/12/19/linux学习笔记/linux各种发行版安装小记/">
+                    virtualbox安装linux各种发行版小记
                 </a>
             </div>
         
@@ -365,7 +369,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#根据王爽《汇编语言》"><span class="toc-number">1.</span> <span class="toc-text">根据王爽《汇编语言》</span></a></li></ol>
         
     </div>
     <style>
@@ -401,7 +405,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"test命令　| kameii'site　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"汇编的一些基础知识记录　| kameii'site　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -421,15 +425,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/2016/12/19/linux学习笔记/linux各种发行版安装小记/" title="上一篇: virtualbox安装linux各种发行版小记">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/blog/2016/12/13/virtual安装osx/" title="下一篇: virtalbox安装osx 10.11">
+            <a href="/blog/2016/12/19/linux学习笔记/linux各种发行版安装小记/" title="下一篇: virtualbox安装linux各种发行版小记">
                 <i class="fa fa-angle-right"></i>
             </a>
         
