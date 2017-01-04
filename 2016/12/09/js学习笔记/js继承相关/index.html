@@ -15,22 +15,25 @@
 
 
 
-<meta name="description" content="在JavaScript中，所有的对象都是基于 Object；所有的对象都继承了Object.prototype的属性和方法，它们可以被覆盖（除了以null为原型的对象，如 Object.create(null)）
+<meta name="description" content="相关理论可以在《JavaScript高级程序设计》第六章和《JavaScript for PHP Developers》第四章，以及mdn上阅读。
 
-Object.prototype的原型是null，所以得对象顺着原型链最后都会这里，且只会到这里。通过Object.create可用指定的原型创建对象，12345var a = &amp;#">
+创建对象js创建对象涉及对象，构造器函数和原型等三者。
+函数在js中是对象，所以可以有属性。创建一个构造器函数，比如Person，就会自动得到一个prototype属性，该属性指向原型对象Person prototype。该原型对象有一个属性cons">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js继承相关">
+<meta property="og:title" content="js对象和原型">
 <meta property="og:url" content="http://kameii.tk/blog/2016/12/09/js学习笔记/js继承相关/index.html">
 <meta property="og:site_name" content="kameii'site">
-<meta property="og:description" content="在JavaScript中，所有的对象都是基于 Object；所有的对象都继承了Object.prototype的属性和方法，它们可以被覆盖（除了以null为原型的对象，如 Object.create(null)）
+<meta property="og:description" content="相关理论可以在《JavaScript高级程序设计》第六章和《JavaScript for PHP Developers》第四章，以及mdn上阅读。
 
-Object.prototype的原型是null，所以得对象顺着原型链最后都会这里，且只会到这里。通过Object.create可用指定的原型创建对象，12345var a = &amp;#">
-<meta property="og:updated_time" content="2016-09-07T12:59:44.554Z">
+创建对象js创建对象涉及对象，构造器函数和原型等三者。
+函数在js中是对象，所以可以有属性。创建一个构造器函数，比如Person，就会自动得到一个prototype属性，该属性指向原型对象Person prototype。该原型对象有一个属性cons">
+<meta property="og:updated_time" content="2017-01-04T11:17:42.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js继承相关">
-<meta name="twitter:description" content="在JavaScript中，所有的对象都是基于 Object；所有的对象都继承了Object.prototype的属性和方法，它们可以被覆盖（除了以null为原型的对象，如 Object.create(null)）
+<meta name="twitter:title" content="js对象和原型">
+<meta name="twitter:description" content="相关理论可以在《JavaScript高级程序设计》第六章和《JavaScript for PHP Developers》第四章，以及mdn上阅读。
 
-Object.prototype的原型是null，所以得对象顺着原型链最后都会这里，且只会到这里。通过Object.create可用指定的原型创建对象，12345var a = &amp;#">
+创建对象js创建对象涉及对象，构造器函数和原型等三者。
+函数在js中是对象，所以可以有属性。创建一个构造器函数，比如Person，就会自动得到一个prototype属性，该属性指向原型对象Person prototype。该原型对象有一个属性cons">
 
 <link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
 
@@ -60,7 +63,7 @@ Object.prototype的原型是null，所以得对象顺着原型链最后都会这
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>js继承相关 | kameii&#39;site</title>
+<title>js对象和原型 | kameii&#39;site</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -204,7 +207,7 @@ Object.prototype的原型是null，所以得对象顺着原型链最后都会这
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css伪类/">css伪类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css定位/">css定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css选择器/">css选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js赋值/">js赋值</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/osx/">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/virtualbox/">virtualbox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/俄语/">俄语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/继承/">继承</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css伪类/">css伪类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css定位/">css定位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css选择器/">css选择器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js赋值/">js赋值</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/osx/">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/virtualbox/">virtualbox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/俄语/">俄语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/原型/">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/操作系统/">操作系统</a></li></ul>
                     </div>
                 </section>
                 
@@ -298,7 +301,7 @@ Object.prototype的原型是null，所以得对象顺着原型链最后都会这
         
   
     <h1 class="article-title" itemprop="name">
-      js继承相关
+      js对象和原型
     </h1>
   
 
@@ -313,7 +316,7 @@ Object.prototype的原型是null，所以得对象顺着原型链最后都会这
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/继承/">继承</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/原型/">原型</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -323,14 +326,20 @@ Object.prototype的原型是null，所以得对象顺着原型链最后都会这
     <div class="article-entry" itemprop="articleBody">
       
           
-        <blockquote>
+        <p>相关理论可以在《JavaScript高级程序设计》第六章和《JavaScript for PHP Developers》第四章，以及mdn上阅读。</p>
+<hr>
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>js创建对象涉及对象，构造器函数和原型等三者。</p>
+<p>函数在js中是对象，所以可以有属性。创建一个构造器函数，比如Person，就会自动得到一个prototype属性，该属性指向原型对象Person prototype。该原型对象有一个属性constructor，指向构造器函数，也就是说：<br><code>Person.prototype.constructor===Person</code><br>new了一个对象实例后，比如<code>var person=new Person()</code>，person对象有一个指针属性[[Prototype]]，指向构造器的原型对象，该属性可通过Object.setPrototypeOf()和Object.getPrototypeOf()来操作，不过以前的方法是用<code>__proto__</code>，如下：<br><code>person.__proto__ === Person.prototype</code><br>不为函数的对象没有prototype属性，但有[[Prototype]]或<code>__proto__</code>。</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>原型对象也有原型，事实上：</p>
+<blockquote>
 <p>在JavaScript中，所有的对象都是基于 Object；所有的对象都继承了Object.prototype的属性和方法，它们可以被覆盖（除了以null为原型的对象，如 Object.create(null)）</p>
 </blockquote>
-<p>Object.prototype的原型是null，所以得对象顺着原型链最后都会这里，且只会到这里。<br>通过Object.create可用指定的原型创建对象，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = &#123;a: 1&#125;; </div><div class="line">// a ---&gt; Object.prototype ---&gt; null</div><div class="line"></div><div class="line">var b = Object.create(a);</div><div class="line">// b ---&gt; a ---&gt; Object.prototype ---&gt; null</div></pre></td></tr></table></figure></p>
-<p>function Graph() {<br>  this.vertexes = [];<br>  this.edges = [];<br>}</p>
-<p>Graph.prototype = {<br>  addVertex: function(v){<br>    this.vertexes.push(v);<br>  }<br>};</p>
-<p>var g = new Graph();<br>等价于<br>var g=new Object();<br>g.[[Prototype]] = Graph.prototype;<br>Graph.call(g);</p>
-<p>g —&gt; Graph.prototype({<br>  addVertex: function(v){<br>    this.vertexes.push(v);<br>  }<br>}) —&gt; Object.prototype —&gt; null<br>如果没有定义Graph.prototype，则Graph.prototype为Function.prototype<br>则<br>g —&gt; Graph.prototype —&gt; Object.prototype —&gt; null</p>
+<p><code>Object.prototype.__proto__</code>是null，所有的对象顺着原型链最后都会这里，且只会到这里。<br>通过Object.create可用指定的原型创建对象，</p>
+<p>将某一类型的实例作为原型对象的<code>__proto__</code>，Sub.prototype=new Super()，形成原型链。<br>但如果赋值的是原型对象，而不是实例，则构造函数中的this自身属性不会被继承。</p>
+<p>通过原型链可以逐层寻找属性，比如实例的constructor属性，不是自身属性，但原型对象有。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var a = &#123;a: 1&#125;; </div><div class="line">// a ---&gt; Object.prototype ---&gt; null</div><div class="line"></div><div class="line">var b = Object.create(a);</div><div class="line">// b ---&gt; a ---&gt; Object.prototype ---&gt; null</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Graph() &#123;</div><div class="line">  this.vertexes = [];</div><div class="line">  this.edges = [];</div><div class="line">&#125;</div><div class="line"></div><div class="line">Graph.prototype = &#123;</div><div class="line">  addVertex: function(v)&#123;</div><div class="line">    this.vertexes.push(v);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var g = new Graph();</div></pre></td></tr></table></figure>
+<p>等价于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var g=new Object();</div><div class="line">g.[[Prototype]] = Graph.prototype;</div><div class="line">Graph.call(g);</div><div class="line"></div><div class="line">g ---&gt; Graph.prototype(&#123;</div><div class="line">  addVertex: function(v)&#123;</div><div class="line">    this.vertexes.push(v);</div><div class="line">  &#125;</div><div class="line">&#125;) ---&gt; Object.prototype ---&gt; null</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -339,12 +348,12 @@ Object.prototype的原型是null，所以得对象顺着原型链最后都会这
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/2016/12/09/js学习笔记/js继承相关/">js继承相关</a></p>
+        <p><span>本文标题:</span><a href="/blog/2016/12/09/js学习笔记/js继承相关/">js对象和原型</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">kameii</a></p>
         <p><span>发布时间:</span>2016-12-09, 11:39:27</p>
-        <p><span>最后更新:</span>2016-09-07, 20:59:44</p>
+        <p><span>最后更新:</span>2017-01-04, 19:17:42</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2016/12/09/js学习笔记/js继承相关/" title="js继承相关">http://kameii.tk/blog/blog/2016/12/09/js学习笔记/js继承相关/</a>
+            <span>原始链接:</span><a class="post-url" href="/blog/2016/12/09/js学习笔记/js继承相关/" title="js对象和原型">http://kameii.tk/blog/blog/2016/12/09/js学习笔记/js继承相关/</a>
             <span class="copy-path" data-clipboard-text="原文: http://kameii.tk/blog/blog/2016/12/09/js学习笔记/js继承相关/　　作者: kameii" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -378,7 +387,7 @@ Object.prototype的原型是null，所以得对象顺着原型链最后都会这
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建对象"><span class="toc-number">1.</span> <span class="toc-text">创建对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型链"><span class="toc-number">2.</span> <span class="toc-text">原型链</span></a></li></ol>
         
     </div>
     <style>
@@ -414,7 +423,7 @@ Object.prototype的原型是null，所以得对象顺着原型链最后都会这
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"js继承相关　| kameii'site　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"js对象和原型　| kameii'site　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -448,7 +457,7 @@ Object.prototype的原型是null，所以得对象顺着原型链最后都会这
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/24/汇编学习笔记/汇编基础知识/">汇编的一些基础知识记录</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/19/linux学习笔记/linux各种发行版安装小记/">virtualbox安装linux各种发行版小记</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/15/linux学习笔记/test命令/">test命令</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/13/virtual安装osx/">virtalbox安装osx 10.11</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/俄语学习笔记/俄语学习笔记(一)/">语音相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/js继承相关/">js继承相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/js判断true和false./">js判断true和false.</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/js动态绑定事件/">js动态绑定事件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/js赋值语句/">js赋值语句</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/hexo相关/hexo文章标题/">hexo文章标题不能有#</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/hexo相关/hexo部署出错/">hexo部署出错</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/hexo相关/hexo部署在网站子目录/">hexo部署在网站子目录</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/css学习笔记/htmlcss杂记/">html、css杂记</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/css学习笔记/position的absolute定位/">position的absolute定位</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/css学习笔记/after和before伪类的一些问题/">before和after伪类的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/css学习笔记/css选择器/">css选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/建站小记/">建站小记</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/24/汇编学习笔记/汇编基础知识/">汇编的一些基础知识记录</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/19/linux学习笔记/linux各种发行版安装小记/">virtualbox安装linux各种发行版小记</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/15/linux学习笔记/test命令/">test命令</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/13/virtual安装osx/">virtalbox安装osx 10.11</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/俄语学习笔记/俄语学习笔记(一)/">语音相关</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/js继承相关/">js对象和原型</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/js判断true和false./">js判断true和false.</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/js动态绑定事件/">js动态绑定事件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/js学习笔记/js赋值语句/">js赋值语句</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/hexo相关/hexo文章标题/">hexo文章标题不能有#</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/hexo相关/hexo部署出错/">hexo部署出错</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/hexo相关/hexo部署在网站子目录/">hexo部署在网站子目录</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/css学习笔记/htmlcss杂记/">html、css杂记</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/css学习笔记/position的absolute定位/">position的absolute定位</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/css学习笔记/after和before伪类的一些问题/">before和after伪类的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/css学习笔记/css选择器/">css选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/09/建站小记/">建站小记</a></li></ul>
 
 
 
@@ -463,7 +472,7 @@ Object.prototype的原型是null，所以得对象顺着原型链最后都会这
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016 kameii
+                2016-2017 kameii
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>

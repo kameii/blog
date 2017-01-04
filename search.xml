@@ -54,23 +54,30 @@
     </entry>
     
     <entry>
-      <title><![CDATA[js继承相关]]></title>
+      <title><![CDATA[js对象和原型]]></title>
       <url>http://kameii.tk/blog/blog/2016/12/09/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/js%E7%BB%A7%E6%89%BF%E7%9B%B8%E5%85%B3/</url>
-      <content type="html"><![CDATA[<blockquote>
+      <content type="html"><![CDATA[<p>相关理论可以在《JavaScript高级程序设计》第六章和《JavaScript for PHP Developers》第四章，以及mdn上阅读。</p>
+<hr>
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>js创建对象涉及对象，构造器函数和原型等三者。</p>
+<p>函数在js中是对象，所以可以有属性。创建一个构造器函数，比如Person，就会自动得到一个prototype属性，该属性指向原型对象Person prototype。该原型对象有一个属性constructor，指向构造器函数，也就是说：<br><code>Person.prototype.constructor===Person</code><br>new了一个对象实例后，比如<code>var person=new Person()</code>，person对象有一个指针属性[[Prototype]]，指向构造器的原型对象，该属性可通过Object.setPrototypeOf()和Object.getPrototypeOf()来操作，不过以前的方法是用<code>__proto__</code>，如下：<br><code>person.__proto__ === Person.prototype</code><br>不为函数的对象没有prototype属性，但有[[Prototype]]或<code>__proto__</code>。</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>原型对象也有原型，事实上：</p>
+<blockquote>
 <p>在JavaScript中，所有的对象都是基于 Object；所有的对象都继承了Object.prototype的属性和方法，它们可以被覆盖（除了以null为原型的对象，如 Object.create(null)）</p>
 </blockquote>
-<p>Object.prototype的原型是null，所以得对象顺着原型链最后都会这里，且只会到这里。<br>通过Object.create可用指定的原型创建对象，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = &#123;a: 1&#125;; </div><div class="line">// a ---&gt; Object.prototype ---&gt; null</div><div class="line"></div><div class="line">var b = Object.create(a);</div><div class="line">// b ---&gt; a ---&gt; Object.prototype ---&gt; null</div></pre></td></tr></table></figure></p>
-<p>function Graph() {<br>  this.vertexes = [];<br>  this.edges = [];<br>}</p>
-<p>Graph.prototype = {<br>  addVertex: function(v){<br>    this.vertexes.push(v);<br>  }<br>};</p>
-<p>var g = new Graph();<br>等价于<br>var g=new Object();<br>g.[[Prototype]] = Graph.prototype;<br>Graph.call(g);</p>
-<p>g —&gt; Graph.prototype({<br>  addVertex: function(v){<br>    this.vertexes.push(v);<br>  }<br>}) —&gt; Object.prototype —&gt; null<br>如果没有定义Graph.prototype，则Graph.prototype为Function.prototype<br>则<br>g —&gt; Graph.prototype —&gt; Object.prototype —&gt; null</p>
+<p><code>Object.prototype.__proto__</code>是null，所有的对象顺着原型链最后都会这里，且只会到这里。<br>通过Object.create可用指定的原型创建对象，</p>
+<p>将某一类型的实例作为原型对象的<code>__proto__</code>，Sub.prototype=new Super()，形成原型链。<br>但如果赋值的是原型对象，而不是实例，则构造函数中的this自身属性不会被继承。</p>
+<p>通过原型链可以逐层寻找属性，比如实例的constructor属性，不是自身属性，但原型对象有。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var a = &#123;a: 1&#125;; </div><div class="line">// a ---&gt; Object.prototype ---&gt; null</div><div class="line"></div><div class="line">var b = Object.create(a);</div><div class="line">// b ---&gt; a ---&gt; Object.prototype ---&gt; null</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Graph() &#123;</div><div class="line">  this.vertexes = [];</div><div class="line">  this.edges = [];</div><div class="line">&#125;</div><div class="line"></div><div class="line">Graph.prototype = &#123;</div><div class="line">  addVertex: function(v)&#123;</div><div class="line">    this.vertexes.push(v);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var g = new Graph();</div></pre></td></tr></table></figure>
+<p>等价于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var g=new Object();</div><div class="line">g.[[Prototype]] = Graph.prototype;</div><div class="line">Graph.call(g);</div><div class="line"></div><div class="line">g ---&gt; Graph.prototype(&#123;</div><div class="line">  addVertex: function(v)&#123;</div><div class="line">    this.vertexes.push(v);</div><div class="line">  &#125;</div><div class="line">&#125;) ---&gt; Object.prototype ---&gt; null</div></pre></td></tr></table></figure></p>
 ]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[js判断true和false.]]></title>
       <url>http://kameii.tk/blog/blog/2016/12/09/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/js%E5%88%A4%E6%96%ADtrue%E5%92%8Cfalse./</url>
-      <content type="html"><![CDATA[<p>空对象{}也是true。判断空对象可用Object.keys(obj).length。</p>
+      <content type="html"><![CDATA[<p>空对象{}也是true。因为数组在js中是对象，因此数组都为true。<br>判断空对象可用Object.keys(obj).length。</p>
+<p>对比：php的array()为假值。</p>
 ]]></content>
     </entry>
     
