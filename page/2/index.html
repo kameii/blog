@@ -276,11 +276,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-js学习笔记/js赋值语句" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js学习笔记/javascript脚本载入执行顺序" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/09/js学习笔记/js赋值语句/" class="article-date">
-      <time datetime="2016-12-09T03:39:26.744Z" itemprop="datePublished">2016-12-09</time>
+      <a href="/blog/2018/09/05/js学习笔记/javascript脚本载入执行顺序/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.313Z" itemprop="datePublished">2018-09-05</time>
 </a>
 
 
@@ -295,7 +295,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/js学习笔记/js赋值语句/">js赋值语句</a>
+      <a class="article-title" href="/blog/2018/09/05/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a>
     </h1>
   
 
@@ -305,9 +305,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在github上看到<a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Chinese#coding-questions" target="_blank" rel="external">前端工作面试问题</a>,<br>其中有一题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var foo = &#123;n: 1&#125;;</div><div class="line">var bar = foo;</div><div class="line">foo.x = foo = &#123;n: 2&#125;;</div></pre></td></tr></table></figure></p>
-<p>问foo.x的值是什么？这里牵扯到赋值运算的问题。<br>查看stackoverflow和<a href="http://www.ecma-international.org/ecma-262/7.0/#sec-assignment-operators-runtime-semantics-evaluation" target="_blank" rel="external">ecma规格说明书</a>，<br><blockquote class="pullquote"><p>1.If LeftHandSideExpression is neither an ObjectLiteral nor an ArrayLiteral, then<br>　　a.Let lref be the result of evaluating LeftHandSideExpression.</p>
-</blockquote><br>也就是说，第一步要先算左侧表达式的值。而在<code>foo.x = foo = {n: 2};</code>中，foo.x是左侧表达式，但x并未定义，所以是undefined。<br>然后计算右侧<code>foo = {n: 2}</code>，这时foo指向{n: 2}，然后这个表达式返回{n: 2}。</p>
+        <p>大原则是从上到下按序执行，放在<code>&lt;!DOCTYPE html&gt;</code>前面&gt;<code>&lt;html&gt;</code>前&gt;<code>&lt;head&gt;</code>前&gt;<code>&lt;head&gt;</code>中&gt;<code>&lt;body&gt;</code>前&gt;<code>&lt;body&gt;</code>中&gt;<code>&lt;/html&gt;</code>前&gt;<code>&lt;/html&gt;</code>后。</p>
+<p>引入js文件也一样。</p>
+<p>在body元素中使用onload，以及使用window.onload，这两者的执行情况有点复杂。可以参考<a href="http://blog.csdn.net/doupei2006/article/details/7888312" target="_blank" rel="external">这个链接</a>。但里面的例子是有问题的，情况二和情况四里面的window.onload用了函数调用赋值，而不是函数名，这是不应该的。<br>改好后，情况二是acbd，情况四是bcd。另外，在我的老版本firefox和ie9中，情况一是acd，在我的新版本chrome和opera中，则是acbd。<br>总结下：</p>
+<ul>
+<li>onload都是页面加载好后最后执行</li>
+<li>window.onload出现在head中，使用匿名函数，老版本会被后面的body覆盖，新版本按顺序都执行。不适用匿名，按顺序都执行。</li>
+<li>window.onload在body里，覆盖body。</li>
+</ul>
+<p>顺便，如果按原来的函数调用赋值，情况二是abcd，情况四是bdc。这也是可以讲通的，调用函数后，给window.onload赋值的其实是undefined，放在head里，等于没赋值，放在body里，又覆盖了body定义的onload。</p>
 
       
     </div>
@@ -322,7 +328,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js赋值/">js赋值</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
     </div>
 
       
@@ -342,11 +348,11 @@
 
 
   
-    <article id="post-hexo相关/hexo文章标题" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js学习笔记/document.write和document.body.innerHTML" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/09/hexo相关/hexo文章标题/" class="article-date">
-      <time datetime="2016-12-09T03:39:26.634Z" itemprop="datePublished">2016-12-09</time>
+      <a href="/blog/2018/09/05/js学习笔记/document.write和document.body.innerHTML/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.309Z" itemprop="datePublished">2018-09-05</time>
 </a>
 
 
@@ -361,7 +367,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/hexo相关/hexo文章标题/">hexo文章标题不能有#</a>
+      <a class="article-title" href="/blog/2018/09/05/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a>
     </h1>
   
 
@@ -371,7 +377,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>想在文章标题里写c#，虽然在首页可以看到，但一点进去就发现只解析到#前。</p>
+        <p>直接用write，按顺序输出，不会把其它数据清除再输出。<br>直接用document.body.innerHTML=’xx’，会把之前的数据清除。可用+=添加数据。</p>
+<p>页面加载完后，通过按钮再运行js，如果使用write，清除数据，但可后退，使用innerHTML，清除数据，可能不能后退。</p>
 
       
     </div>
@@ -380,81 +387,13 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/随笔/">随笔</a>
+    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo相关/hexo部署出错" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/12/09/hexo相关/hexo部署出错/" class="article-date">
-      <time datetime="2016-12-09T03:39:26.607Z" itemprop="datePublished">2016-12-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/hexo相关/hexo部署出错/">hexo部署出错</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>执行命令</p>
-<pre><code>hexo d
-</code></pre><p>出错</p>
-<pre><code>fatal: Not a git repository (or any of the parent directories)
-</code></pre><p>在网上查了下，有说删掉<code>.deploy_git</code>就行，但我试了下。不行，后来看到有人提到将隐藏目录<code>.git</code>复制到<code>.deploy_git</code>里面。我看了下<code>.deploy_git</code>文件夹，里面果然没有了。如果之前有提交到github的话，先复制一份，然后将里面的<code>.git</code>文件夹复制到现在要提交的<code>.deploy_git</code>里面就可以了。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/随笔/">随笔</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
     </div>
 
       
@@ -477,8 +416,8 @@
     <article id="post-hexo相关/hexo部署在网站子目录" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/09/hexo相关/hexo部署在网站子目录/" class="article-date">
-      <time datetime="2016-12-09T03:39:26.576Z" itemprop="datePublished">2016-12-09</time>
+      <a href="/blog/2018/09/05/hexo相关/hexo部署在网站子目录/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.302Z" itemprop="datePublished">2018-09-05</time>
 </a>
 
 
@@ -493,7 +432,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/hexo相关/hexo部署在网站子目录/">hexo部署在网站子目录</a>
+      <a class="article-title" href="/blog/2018/09/05/hexo相关/hexo部署在网站子目录/">hexo部署在网站子目录</a>
     </h1>
   
 
@@ -543,11 +482,11 @@ root: /blog/
 
 
   
-    <article id="post-css学习笔记/htmlcss杂记" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hexo相关/hexo部署出错" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/09/css学习笔记/htmlcss杂记/" class="article-date">
-      <time datetime="2016-12-09T03:39:25.445Z" itemprop="datePublished">2016-12-09</time>
+      <a href="/blog/2018/09/05/hexo相关/hexo部署出错/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.300Z" itemprop="datePublished">2018-09-05</time>
 </a>
 
 
@@ -562,7 +501,203 @@ root: /blog/
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/css学习笔记/htmlcss杂记/">html、css杂记</a>
+      <a class="article-title" href="/blog/2018/09/05/hexo相关/hexo部署出错/">hexo部署出错</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>执行命令</p>
+<pre><code>hexo d
+</code></pre><p>出错</p>
+<pre><code>fatal: Not a git repository (or any of the parent directories)
+</code></pre><p>在网上查了下，有说删掉<code>.deploy_git</code>就行，但我试了下。不行，后来看到有人提到将隐藏目录<code>.git</code>复制到<code>.deploy_git</code>里面。我看了下<code>.deploy_git</code>文件夹，里面果然没有了。如果之前有提交到github的话，先复制一份，然后将里面的<code>.git</code>文件夹复制到现在要提交的<code>.deploy_git</code>里面就可以了。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/随笔/">随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hexo相关/hexo文章标题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2018/09/05/hexo相关/hexo文章标题/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.298Z" itemprop="datePublished">2018-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/09/05/hexo相关/hexo文章标题/">hexo文章标题不能有#</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>想在文章标题里写c#，虽然在首页可以看到，但一点进去就发现只解析到#前。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/随笔/">随笔</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-css学习笔记/position的absolute定位" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2018/09/05/css学习笔记/position的absolute定位/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.291Z" itemprop="datePublished">2018-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/09/05/css学习笔记/position的absolute定位/">position的absolute定位</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>在给body设置样式<code>text-align: center;</code>后，直接给一个没父元素的span元素设置<code>position:absolute</code>，元素相对中线对齐。<br>应该说是对内联元素来说，是相对中线对齐。<br>对块元素，加<code>position:absolute</code>变成内联元素，左对齐。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css定位/">css定位</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-css学习笔记/htmlcss杂记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2018/09/05/css学习笔记/htmlcss杂记/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.289Z" itemprop="datePublished">2018-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/09/05/css学习笔记/htmlcss杂记/">html、css杂记</a>
     </h1>
   
 
@@ -610,219 +745,11 @@ root: /blog/
 
 
   
-    <article id="post-css学习笔记/position的absolute定位" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/12/09/css学习笔记/position的absolute定位/" class="article-date">
-      <time datetime="2016-12-09T03:39:25.436Z" itemprop="datePublished">2016-12-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/css学习笔记/position的absolute定位/">position的absolute定位</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>在给body设置样式<code>text-align: center;</code>后，直接给一个没父元素的span元素设置<code>position:absolute</code>，元素相对中线对齐。<br>应该说是对内联元素来说，是相对中线对齐。<br>对块元素，加<code>position:absolute</code>变成内联元素，左对齐。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/学习笔记/">学习笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css定位/">css定位</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css学习笔记/after和before伪类的一些问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/12/09/css学习笔记/after和before伪类的一些问题/" class="article-date">
-      <time datetime="2016-12-09T03:39:24.449Z" itemprop="datePublished">2016-12-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/css学习笔记/after和before伪类的一些问题/">before和after伪类的一些问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>这两者说是在元素之前和之后插入内容，但貌似应该说是在元素之中插入内容。以jquery的方法来说，<br>这两者更类似prepend和append，而不是before和after。<br>firefox和opera不能选择插入的内容，ie8可以。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/学习笔记/">学习笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css伪类/">css伪类</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css学习笔记/css居中定位的一些问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/12/09/css学习笔记/css居中定位的一些问题/" class="article-date">
-      <time datetime="2016-12-09T03:39:24.385Z" itemprop="datePublished">2016-12-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>1.</p>
-<pre><code>&lt;style&gt;
-.ww{    
-left: 0;
-margin: 0 auto;
-position: absolute;
-right: 0;
-width: 1000px;
-}
-&lt;/style&gt;
-&lt;div class=&apos;ww&apos;&gt;test&lt;/div&gt;
-</code></pre><p>不定义margin，且元素宽度不是100%，只有left和right，偏左，定义margin，居中。</p>
-<p>2.居中dl项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;test&quot;&gt;</div><div class="line">    &lt;dl&gt;</div><div class="line">        &lt;dt&gt;链接组1&lt;/dt&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/superwebview&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/deepengine&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;</div><div class="line">    &lt;/dl&gt;</div><div class="line">    &lt;dl&gt;</div><div class="line">        &lt;dt&gt;链接组2&lt;/dt&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/vipservice/plan&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/vipservice/channel&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;</div><div class="line">    &lt;/dl&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>    </p>
-<p>css样式：<br>1.<strong>推荐</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:flex;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        margin:auto;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
-<p>2.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:flex;</div><div class="line">        justify-content:center;</div><div class="line">        align-content:center;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        width: 40%;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
-<p>3.<br>opera中，貌似可用旧的盒子语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:-webkit-box;</div><div class="line">        -webkit-box-pack:center;</div><div class="line">        -webkit-box-align:center;</div><div class="line">        box-pack:center;</div><div class="line">        box-align:center;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        margin-right:30px;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line">    dl:last-child&#123;</div><div class="line">        margin-right:0;</div><div class="line">    &#125;</div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
-<p>还有其他的方法，但没必要多写了。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/学习笔记/">学习笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css定位/">css定位</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-css学习笔记/css选择器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/09/css学习笔记/css选择器/" class="article-date">
-      <time datetime="2016-12-09T03:39:24.379Z" itemprop="datePublished">2016-12-09</time>
+      <a href="/blog/2018/09/05/css学习笔记/css选择器/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.286Z" itemprop="datePublished">2018-09-05</time>
 </a>
 
 
@@ -837,7 +764,7 @@ width: 1000px;
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/css学习笔记/css选择器/">css选择器</a>
+      <a class="article-title" href="/blog/2018/09/05/css学习笔记/css选择器/">css选择器</a>
     </h1>
   
 
@@ -898,11 +825,11 @@ body{background-color:blue;}
 
 
   
-    <article id="post-建站小记" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-css学习笔记/css居中定位的一些问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/09/建站小记/" class="article-date">
-      <time datetime="2016-12-09T03:39:23.196Z" itemprop="datePublished">2016-12-09</time>
+      <a href="/blog/2018/09/05/css学习笔记/css居中定位的一些问题/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.284Z" itemprop="datePublished">2018-09-05</time>
 </a>
 
 
@@ -917,7 +844,7 @@ body{background-color:blue;}
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/建站小记/">建站小记</a>
+      <a class="article-title" href="/blog/2018/09/05/css学习笔记/css居中定位的一些问题/">css居中定位的一些问题</a>
     </h1>
   
 
@@ -927,9 +854,23 @@ body{background-color:blue;}
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>　　第一篇在自己建的站上写的博客。有点感慨，但也不多。随便记点建站的东西吧。</p>
-<hr>
-<p>　　申请域名忘了从哪看到的，总之是在freenom申请了现在的tk域名。免费嘛，现在也就是建个站试试，以后还得换。不仅是域名，代码托管也得换地方。本来想放在sae什么的，但最后还是选在github。不过用github写博客，总感觉博客的内容应该和代码啊，编程啊之类的相关，虽然官方没这么要求。此外，因为是静态网页，还有其它的一些问题，所以以后应该还是会换的。<br>　　用hexo建博客，我也不记得是哪看到的了，貌似是看到别人的网站是这么建的，我也就学着用了，用的主题也一样。现在我的博客还没有自己修改，自己技术不到家是一方面，没有时间也是原因之一。不过说实话，现在的样子我已经很满意了。<br>　　话说，hexo是用markdown的。想当初，我在某地发表评论，因为没学过，甚至根本没听过markdown，评论的格式弄得很糟，被狠狠地吐槽了。很无奈，我是不知道别人是怎么知道这些东西的。<br>　　不说其他的了，具体建站的教程网上很多，也没有写的必要了。直接列点参考的链接吧。<br>　　1.<a href="http://www.isetsuna.com/categories/Hexo/" target="_blank" rel="external">Hexo博客系列</a>，主要是参考这个<br>　　2.<a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客</a>，这个没怎么看<br>　　3.<a href="http://www.ituring.com.cn/minibook/29442" target="_blank" rel="external">Hexo合集</a>，这个看起来不错<br>其实网上一搜就可以搜到很多……</p>
+        <p>1.</p>
+<pre><code>&lt;style&gt;
+.ww{    
+left: 0;
+margin: 0 auto;
+position: absolute;
+right: 0;
+width: 1000px;
+}
+&lt;/style&gt;
+&lt;div class=&apos;ww&apos;&gt;test&lt;/div&gt;
+</code></pre><p>不定义margin，且元素宽度不是100%，只有left和right，偏左，定义margin，居中。</p>
+<p>2.居中dl项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;test&quot;&gt;</div><div class="line">    &lt;dl&gt;</div><div class="line">        &lt;dt&gt;链接组1&lt;/dt&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/superwebview&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/deepengine&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;</div><div class="line">    &lt;/dl&gt;</div><div class="line">    &lt;dl&gt;</div><div class="line">        &lt;dt&gt;链接组2&lt;/dt&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/vipservice/plan&quot;&gt;1&lt;/a&gt;&lt;/dd&gt;</div><div class="line">        &lt;dd&gt;&lt;a href=&quot;/vipservice/channel&quot;&gt;2&lt;/a&gt;&lt;/dd&gt;</div><div class="line">    &lt;/dl&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>    </p>
+<p>css样式：<br>1.<strong>推荐</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:flex;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        margin:auto;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>2.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:flex;</div><div class="line">        justify-content:center;</div><div class="line">        align-content:center;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        width: 40%;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>3.<br>opera中，貌似可用旧的盒子语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .test&#123;</div><div class="line">        display:-webkit-box;</div><div class="line">        -webkit-box-pack:center;</div><div class="line">        -webkit-box-align:center;</div><div class="line">        box-pack:center;</div><div class="line">        box-align:center;</div><div class="line">    &#125;</div><div class="line">    dl&#123;</div><div class="line">        margin-right:30px;</div><div class="line">        text-align: center;</div><div class="line">    &#125;</div><div class="line">    dl:last-child&#123;</div><div class="line">        margin-right:0;</div><div class="line">    &#125;</div><div class="line">    dd&#123;</div><div class="line">        margin:0;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>还有其他的方法，但没必要多写了。</p>
 
       
     </div>
@@ -938,11 +879,79 @@ body{background-color:blue;}
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/建站/">建站</a>
+    <a class="article-category-link" href="/blog/categories/学习笔记/">学习笔记</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css定位/">css定位</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-css学习笔记/after和before伪类的一些问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2018/09/05/css学习笔记/after和before伪类的一些问题/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.281Z" itemprop="datePublished">2018-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/09/05/css学习笔记/after和before伪类的一些问题/">before和after伪类的一些问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>这两者说是在元素之前和之后插入内容，但貌似应该说是在元素之中插入内容。以jquery的方法来说，<br>这两者更类似prepend和append，而不是before和after。<br>firefox和opera不能选择插入的内容，ie8可以。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/学习笔记/">学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css伪类/">css伪类</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -962,7 +971,7 @@ body{background-color:blue;}
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/blog/">&laquo; Prev</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/blog/">&laquo; Prev</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
@@ -971,7 +980,7 @@ body{background-color:blue;}
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2017 kameii
+                2016-2018 kameii
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>

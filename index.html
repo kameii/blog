@@ -276,11 +276,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-汇编学习笔记/汇编基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-java学习笔记/static关键字" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/24/汇编学习笔记/汇编基础知识/" class="article-date">
-      <time datetime="2016-12-24T11:01:29.695Z" itemprop="datePublished">2016-12-24</time>
+      <a href="/blog/2018/09/05/java学习笔记/static关键字/" class="article-date">
+      <time datetime="2018-09-05T11:23:07.388Z" itemprop="datePublished">2018-09-05</time>
 </a>
 
 
@@ -295,7 +295,141 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/24/汇编学习笔记/汇编基础知识/">汇编的一些基础知识记录</a>
+      <a class="article-title" href="/blog/2018/09/05/java学习笔记/static关键字/">static关键字</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Java核心技术 卷1 ，p117-118：</p>
+<blockquote>
+<p>Static至少有三个意义。一是退出后依然存在的局部变量，c引入的；二是不能被其他文件访问的全局变量和函数，c重用了static；三是c++重用，表示属于类且不属于类对象的变量和函数，这个含义域与java相同。</p>
+</blockquote>
+<p>Java编程思想，p95：</p>
+<blockquote>
+<p>static关键字不能应用于局部变量，只能用于域。</p>
+</blockquote>
+<p>java的static只能用于静态域(类数据)和静态方法(类方法)。不能在方法里用。非静态方法也不能使用静态域，静态方法则可以不显式声明地使用。<br>php的static除了静态属性，静态方法，还有函数里的static，这是指退出后依然存在的局部变量。php可以在静态或非静态方法中引用静态属性，但都需要显式声明。<br>java和php都不可以在静态方法里引用非静态属性。</p>
+<p>php有1，3两种意义。java是3。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/java/">java</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-微信公众号记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2018/09/05/微信公众号记录/" class="article-date">
+      <time datetime="2018-09-05T11:15:01.529Z" itemprop="datePublished">2018-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/09/05/微信公众号记录/">微信公众号记录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>去图书馆借了一本《微信公众平台开发最佳实践》。对照着试了下。<br>书是2014年出版的。有些内容已经过时了。作者在cnblogs上的内容倒是更新了。所以其实看网上的教程就差不多。<br>选来选去还是在sae上建了应用，用注册用的豆。</p>
+<p>服务器配置现在有三种模式了：明文，兼容和安全模式。由于兼容模式下出错，为省事，我还是选了明文模式。</p>
+<p>书中在响应消息函数里用了$GLOBALS[“HTTP_RAW_POST_DATA”]，但貌似是因为php7下移除了，总之现在可用file_get_contents(“php://input”)来替换。</p>
+<p>微信公众平台接口调试工具很有用，可以用来检查问题。</p>
+<p>弄了测试账号，然后在看到接口权限种看到有很多功能未获取，需要微信认证，然而<code>暂不支持个人类型的公众帐号申请微信认证</code>。所以自定义菜单什么的就弄不了了。</p>
+<p>在微信公众平台接口调试工具上使用客户接口发送消息，提示Invalid OpenID。网上一查，发现很多人都遇到。网上目前看到的解决方法都没用。后来我用获取关注者列表接口得到了关注人的openid，但这个openid和和我使用手机微信发送到服务器的openid是不一样的。清空关注者后，还有openid字段。重新关注后，发到服务器的还是一样的。后来突然想到可能是权限的问题。一看，发现用户管理也必须通过微信认证。好嘛，原来之前得到的openid是测试用的。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/微信/">微信</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-汇编学习笔记/汇编基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2018/09/05/汇编学习笔记/汇编基础知识/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.354Z" itemprop="datePublished">2018-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/09/05/汇编学习笔记/汇编基础知识/">汇编的一些基础知识记录</a>
     </h1>
   
 
@@ -341,11 +475,11 @@
 
 
   
-    <article id="post-linux学习笔记/linux各种发行版安装小记" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-俄语学习笔记/俄语学习笔记(一)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/19/linux学习笔记/linux各种发行版安装小记/" class="article-date">
-      <time datetime="2016-12-18T16:32:30.020Z" itemprop="datePublished">2016-12-19</time>
+      <a href="/blog/2018/09/05/俄语学习笔记/俄语学习笔记(一)/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.342Z" itemprop="datePublished">2018-09-05</time>
 </a>
 
 
@@ -360,7 +494,135 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/19/linux学习笔记/linux各种发行版安装小记/">virtualbox安装linux各种发行版小记</a>
+      <a class="article-title" href="/blog/2018/09/05/俄语学习笔记/俄语学习笔记(一)/">语音相关</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>关于元音弱化。/o/和/a/非重读，硬辅音后，在词首或重读音节前一音节，一级弱化为[ɐ][或[ʌ]（前者是莫斯科音，后者是圣彼得堡音，大学俄语东方就是这个。）其它情况下发[ə]，比如词末，重读音节前第二音节以及之前，重读后。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/俄语学习笔记/">俄语学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/俄语/">俄语</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-linux学习笔记/test命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2018/09/05/linux学习笔记/test命令/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.333Z" itemprop="datePublished">2018-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/09/05/linux学习笔记/test命令/">test命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>test 在比较的时候，比如字符串<code>test &#39;foo&#39; = &#39;bar&#39;2</code>，在测试标志两边必须有空格，<br>不能写成<code>test &#39;foo&#39;=&#39;bar&#39;</code>，不然结果总是true。<br>[]也差不多。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/linux学习笔记/">linux学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/操作系统/">操作系统</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-linux学习笔记/linux各种发行版安装小记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2018/09/05/linux学习笔记/linux各种发行版安装小记/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.330Z" itemprop="datePublished">2018-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/09/05/linux学习笔记/linux各种发行版安装小记/">virtualbox安装linux各种发行版小记</a>
     </h1>
   
 
@@ -413,11 +675,11 @@
 
 
   
-    <article id="post-linux学习笔记/test命令" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js学习笔记/js赋值语句" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/15/linux学习笔记/test命令/" class="article-date">
-      <time datetime="2016-12-15T12:55:57.737Z" itemprop="datePublished">2016-12-15</time>
+      <a href="/blog/2018/09/05/js学习笔记/js赋值语句/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.323Z" itemprop="datePublished">2018-09-05</time>
 </a>
 
 
@@ -432,7 +694,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/15/linux学习笔记/test命令/">test命令</a>
+      <a class="article-title" href="/blog/2018/09/05/js学习笔记/js赋值语句/">js赋值语句</a>
     </h1>
   
 
@@ -442,7 +704,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>test 在比较的时候，比如字符串<code>test &#39;foo&#39; = &#39;bar&#39;2</code>，在测试标志两边必须有空格，<br>不能写成<code>test &#39;foo&#39;=&#39;bar&#39;</code>，不然结果总是true。<br>[]也差不多。</p>
+        <p>在github上看到<a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Chinese#coding-questions" target="_blank" rel="external">前端工作面试问题</a>,<br>其中有一题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var foo = &#123;n: 1&#125;;</div><div class="line">var bar = foo;</div><div class="line">foo.x = foo = &#123;n: 2&#125;;</div></pre></td></tr></table></figure></p>
+<p>问foo.x的值是什么？这里牵扯到赋值运算的问题。<br>查看stackoverflow和<a href="http://www.ecma-international.org/ecma-262/7.0/#sec-assignment-operators-runtime-semantics-evaluation" target="_blank" rel="external">ecma规格说明书</a>，<br><blockquote class="pullquote"><p>1.If LeftHandSideExpression is neither an ObjectLiteral nor an ArrayLiteral, then<br>　　a.Let lref be the result of evaluating LeftHandSideExpression.</p>
+</blockquote><br>也就是说，第一步要先算左侧表达式的值。而在<code>foo.x = foo = {n: 2};</code>中，foo.x是左侧表达式，但x并未定义，所以是undefined。<br>然后计算右侧<code>foo = {n: 2}</code>，这时foo指向{n: 2}，然后这个表达式返回{n: 2}。</p>
 
       
     </div>
@@ -451,139 +715,13 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/linux学习笔记/">linux学习笔记</a>
+    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/操作系统/">操作系统</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-virtual安装osx" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/12/13/virtual安装osx/" class="article-date">
-      <time datetime="2016-12-12T17:09:57.550Z" itemprop="datePublished">2016-12-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/13/virtual安装osx/">virtalbox安装osx 10.11</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>试着用virtualbox装了个osx，版本是OS X 10.11.1(15B42).cdr。<br>电脑是五年前的渣配，32位。</p>
-<p>初次安装，到了dsmos has arrived就卡住不动，网上找了找，发现这篇教程<a href="http://815222418.iteye.com/blog/2312250" target="_blank" rel="external">基于Windows系统VirtualBox部署OS X El Capitan 10.11</a>，按照上面的基本上就行了。<br>后来又找到这篇<a href="http://www.cfan.com.cn/2015/0720/120651.shtml" target="_blank" rel="external">移植苹果，Windows PC上安装MacOS</a>，都差不多。<br>安装的时候发现没改虚拟电脑位置，默认c盘，所以又因为满了而失败了一次。<br>后来找到<a href="http://www.cnblogs.com/xwdreamer/archive/2013/10/11/3363451.html" target="_blank" rel="external">修改VirtualBox虚拟机默认存储路径及虚拟机迁移方法</a>，<br>新建个虚拟机，通过使用已有的虚拟硬盘文件装上了。</p>
-<p>后来关机再重启却又要求我重装，之后把右上角的osx base system推出后，就没有要求重装了。其实貌似应该直接从virtualbox删除盘片的……安装linux的时候大部分都会自己弹出盘片，倒是没注意osx。不过进系统了也卡的很，果然电脑太差了。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/osx/">osx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/virtualbox/">virtualbox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/操作系统/">操作系统</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-俄语学习笔记/俄语学习笔记(一)" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/12/09/俄语学习笔记/俄语学习笔记(一)/" class="article-date">
-      <time datetime="2016-12-09T03:39:28.491Z" itemprop="datePublished">2016-12-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/俄语学习笔记/俄语学习笔记(一)/">语音相关</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>关于元音弱化。/o/和/a/非重读，硬辅音后，在词首或重读音节前一音节，一级弱化为[ɐ][或[ʌ]（前者是莫斯科音，后者是圣彼得堡音，大学俄语东方就是这个。）其它情况下发[ə]，比如词末，重读音节前第二音节以及之前，重读后。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/俄语学习笔记/">俄语学习笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/俄语/">俄语</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js赋值/">js赋值</a></li></ul>
     </div>
 
       
@@ -606,8 +744,8 @@
     <article id="post-js学习笔记/js继承相关" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/09/js学习笔记/js继承相关/" class="article-date">
-      <time datetime="2016-12-09T03:39:27.315Z" itemprop="datePublished">2016-12-09</time>
+      <a href="/blog/2018/09/05/js学习笔记/js继承相关/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.320Z" itemprop="datePublished">2018-09-05</time>
 </a>
 
 
@@ -622,7 +760,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/js学习笔记/js继承相关/">js对象和原型</a>
+      <a class="article-title" href="/blog/2018/09/05/js学习笔记/js继承相关/">js对象和原型</a>
     </h1>
   
 
@@ -680,11 +818,11 @@
 
 
   
-    <article id="post-js学习笔记/js判断true和false." class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js学习笔记/js动态绑定事件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/12/09/js学习笔记/js判断true和false./" class="article-date">
-      <time datetime="2016-12-09T03:39:27.306Z" itemprop="datePublished">2016-12-09</time>
+      <a href="/blog/2018/09/05/js学习笔记/js动态绑定事件/" class="article-date">
+      <time datetime="2018-09-05T10:44:12.318Z" itemprop="datePublished">2018-09-05</time>
 </a>
 
 
@@ -699,7 +837,71 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/js学习笔记/js判断true和false./">js判断true和false.</a>
+      <a class="article-title" href="/blog/2018/09/05/js学习笔记/js动态绑定事件/">js动态绑定事件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>给动态产生的对象绑定事件可以使用事件委托</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js学习笔记/js判断true和false." class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2018/09/05/js学习笔记/js判断true和false./" class="article-date">
+      <time datetime="2018-09-05T10:44:12.315Z" itemprop="datePublished">2018-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/09/05/js学习笔记/js判断true和false./">js判断true和false.</a>
     </h1>
   
 
@@ -745,210 +947,9 @@
 
 
   
-    <article id="post-js学习笔记/js动态绑定事件" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/12/09/js学习笔记/js动态绑定事件/" class="article-date">
-      <time datetime="2016-12-09T03:39:27.296Z" itemprop="datePublished">2016-12-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/js学习笔记/js动态绑定事件/">js动态绑定事件</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>给动态产生的对象绑定事件可以使用事件委托</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js学习笔记/javascript脚本载入执行顺序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/12/09/js学习笔记/javascript脚本载入执行顺序/" class="article-date">
-      <time datetime="2016-12-09T03:39:26.777Z" itemprop="datePublished">2016-12-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/js学习笔记/javascript脚本载入执行顺序/">javascript脚本载入执行顺序，以及onload问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>大原则是从上到下按序执行，放在<code>&lt;!DOCTYPE html&gt;</code>前面&gt;<code>&lt;html&gt;</code>前&gt;<code>&lt;head&gt;</code>前&gt;<code>&lt;head&gt;</code>中&gt;<code>&lt;body&gt;</code>前&gt;<code>&lt;body&gt;</code>中&gt;<code>&lt;/html&gt;</code>前&gt;<code>&lt;/html&gt;</code>后。</p>
-<p>引入js文件也一样。</p>
-<p>在body元素中使用onload，以及使用window.onload，这两者的执行情况有点复杂。可以参考<a href="http://blog.csdn.net/doupei2006/article/details/7888312" target="_blank" rel="external">这个链接</a>。但里面的例子是有问题的，情况二和情况四里面的window.onload用了函数调用赋值，而不是函数名，这是不应该的。<br>改好后，情况二是acbd，情况四是bcd。另外，在我的老版本firefox和ie9中，情况一是acd，在我的新版本chrome和opera中，则是acbd。<br>总结下：</p>
-<ul>
-<li>onload都是页面加载好后最后执行</li>
-<li>window.onload出现在head中，使用匿名函数，老版本会被后面的body覆盖，新版本按顺序都执行。不适用匿名，按顺序都执行。</li>
-<li>window.onload在body里，覆盖body。</li>
-</ul>
-<p>顺便，如果按原来的函数调用赋值，情况二是abcd，情况四是bdc。这也是可以讲通的，调用函数后，给window.onload赋值的其实是undefined，放在head里，等于没赋值，放在body里，又覆盖了body定义的onload。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js学习笔记/document.write和document.body.innerHTML" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/12/09/js学习笔记/document.write和document.body.innerHTML/" class="article-date">
-      <time datetime="2016-12-09T03:39:26.773Z" itemprop="datePublished">2016-12-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/09/js学习笔记/document.write和document.body.innerHTML/">document.write和document.body.innerHTML</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>直接用write，按顺序输出，不会把其它数据清除再输出。<br>直接用document.body.innerHTML=’xx’，会把之前的数据清除。可用+=添加数据。</p>
-<p>页面加载完后，通过按钮再运行js，如果使用write，清除数据，但可后退，使用innerHTML，清除数据，可能不能后退。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/javascript学习笔记/">javascript学习笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
@@ -957,7 +958,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2017 kameii
+                2016-2018 kameii
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
